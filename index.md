@@ -49,7 +49,7 @@ Before starting the labs make sure to review the
 
 * **[Disable MQ security.](MQ-security/index.md)** Steps to disable MQ security for varies labs.   
 
-* **[Setup Common registry for API Manager.](Login-apic/index.md)** Steps to disable MQ security for varies labs.  
+* **[Setup Common registry for API Manager.](Login-apic/index.md)** Steps to setup co-authoring for APIC.
 
 * **[VDI overview & instructions.](VDI-overview/index.md)** The following instructions are for accessing the needed resources for completing labs.   We will be using a shared cluster for most labs, but some will also use a common desktop (VDI) that contains the needed software. <br>
 **NOTE: The PoT coordinator should have sent you an email with your student number and links to a VDI Linux desktop and the URL to be used to accessing the shared cluster.**
