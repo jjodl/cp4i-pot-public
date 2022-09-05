@@ -1,0 +1,2 @@
+Taxi Locator: http://eem-demo-rest-api.cp4i-apic.svc:1880/api/v1/findtaxis
+Taxi Messaging: http://eem-demo-rest-api.cp4i-apic.svc:1880/api/v1/taxialert

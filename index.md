@@ -49,7 +49,9 @@ Before starting the labs make sure to review the
 
 * **[Disable MQ security.](MQ-security/index.md)** Steps to disable MQ security for varies labs.   
 
-* **[Setup Common registry for API Manager.](Login-apic/index.md)** Steps to setup co-authoring for APIC.
+* **[Setup Common registry for API Manager.](Login-apic/index.md)** Steps to setup co-authoring for APIC 
+
+* **[Create Connection to shared Kafka cluster.](Kafka-Pre-lab/Kafka-Pre-Lab.md)** Steps to create Kafka connection and save credentials and certs for all Kafka labs. 
 
 * **[VDI overview & instructions.](VDI-overview/index.md)** The following instructions are for accessing the needed resources for completing labs.   We will be using a shared cluster for most labs, but some will also use a common desktop (VDI) that contains the needed software. <br>
 **NOTE: The PoT coordinator should have sent you an email with your student number and links to a VDI Linux desktop and the URL to be used to accessing the shared cluster.**
@@ -63,12 +65,13 @@ Before starting the labs make sure to review the
 |---------------------------------------|-----------------------------------------------------------------------------|     
 | [APIC Labs](APIC-labs/ReadMe.md)          | This section you will explore the following key capabilities, Creating an API by importing an OpenAPI definition for an existing REST service, Configuring ClientID/Secret Security endpoints, and proxy to invoke endpoint.  Also testing a REST API in the online developer toolkit and publish an API for developers. <br><br>**Environments:** For these labs you will **NOT** need to use the VDI.  You can login to the Cluster directly from your browser. 
 |---------------------------------------|-----------------------------------------------------------------------------|
+| [Event Endpoint Labs](Event_EndPoint/index.md)          | This section you will explore Event Endpoint Async APIs<br> **Environments:** For these labs you will need to use the VDI.  It is best to login to the Cluster from the VDI.
+|---------------------------------------|-----------------------------------------------------------------------------|
 | [MQ Labs](MQ-labs/index.md)         | Setup MQ within Cloud Pak for Integration.   Will cover varies topics around MQ Uniform Clusters,Native HA, and Tekton pipeline in OpenShift Cluster.<br><br> **Environments:** For these labs you will need to use the VDI.  It is best to login to the Cluster from the VDI.
 |---------------------------------------|-----------------------------------------------------------------------------|
 | [CP4I Addon](Add-on/index.md)         | This section will show additional Unique Value and Capabilities when using Cloud pak for Integration. Collaboration and Asset Sharing with Cloud Pak for Integration **Asset Catalog**, and also Transaction tracing with Cloud Pak for Integration **Operations Dashboard**<br><br> **Environments:** For these labs you will need to use the VDI.  It is best to login to the Cluster from the VDI.
-|---------------------------------------|-----------------------------------------------------------------------------|     
-| **Event Endpoint Labs**          | This section you will explore Event Endpoint Async APIs.<br>**This lab is being worked on.** <br><br> **Environments:** For these labs you will need to use the VDI.  It is best to login to the Cluster from the VDI.
-|---------------------------------------|-----------------------------------------------------------------------------|     
+|---------------------------------------|-----------------------------------------------------------------------------|    
+
 | **Aspera Labs**          | This section you will explore Aspera file transfer. <br> **This lab is being worked on** <br><br> **Environments:** For these labs you will need to use the VDI.  It is best to login to the Cluster from the VDI.  
 
 <!--- <[ACE Toolkit Labs](ACE-toolkit-labs/index.md) > -->

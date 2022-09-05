@@ -54,10 +54,11 @@ You will then have a tab open for each of them to help save time.
 
 # 2.1 Create the Kafka topic<a name="Setup_kafka"></a>
 
-Now fill in the fields.  We will use the SCRAM credentials we saved earlier in the **Kafka Pre-Req**. 
-<br>[Return to Kafka Pre-lab page](../Kafka-Pre-lab/Kafka-Pre-Lab.md)
+Now fill in the fields.  We will use the SCRAM credentials we saved earlier in the **Kafka Pre-Req**.
+<br>
+**Note:** If you didn't complete the pre-lab steps [Return to Kafka Pre-lab page](../../../Kafka-Pre-lab/Kafka-Pre-Lab.md)
 
-Once you complete this or if you have already completed you will have the following details saved in a notepad. 
+Once you complete this or if you have already completed you will have the following details saved in a notepad and the certs should be in your download directory.
 
     a. The bootstrap URL of the cluster
     b. The SCRAM username

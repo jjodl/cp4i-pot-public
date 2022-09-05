@@ -43,94 +43,68 @@ In this lab, you will explore the following key capabilities:
 
 1\. In a browser, enter the URL for the Platform Navigator that is provided by your instructor.
 
-2\. Select the **Enterprise LDAP**:
+If you have not logged in before, follow these instructions to access to the Platform Navigator  ->
+[Login to the Platform Navigator](../../Login-pn/index.md)
 
-![alt text][pic0]
+2\. From the home screen, navigate to the API Connect instance, **apim-demo** under **API lifecycle management**.  
 
-**Note:** You may get a warning message that your connection is not private. If you get this message, you can add an exception.  
-
-To add an exception in the Chrome browser, click **Advanced** and then click **Proceed** to the URL.
-
-![alt text][pic1]
-
-![alt text][pic2]
-
-To add an exception in the Firefox browser, click **Advanced** and then click **Accept the Risk and Continue**.
-
-![alt text][pic3]
-
-![alt text][pic4]
-
-3\. When prompted, use the username and password provided to you for this lab. The username in the screenshots of this lab is chopper2.
-
-![alt text][pic5]
-
-4\. When you log in for the first time, you may see a **Welcome, let's get started** window. Feel free to review the contents by click **Start the tour** or by click on the **X** to close the window.
-
-![alt text][pic6]
-
-5\. From the home screen, navigate to the API Connect instance.  
-
-**Note:** If you are on a different screen, click on **IBM Automation** in the upper left.
+**Note:** If you are on a different screen, click on **IBM Cloud Pak** in the upper left.
 
 ![alt text][pic7]
 
-6\. Click **TechCon LDAP User Registry**.
+3\. Click **Common Services User Registry**.
 
 ![alt text][pic8]
 
-7\. When prompted, log in with the username and password provided to you for this lab. Click **Log in**. The username in the screenshots of this lab is chopper2.
+4\. When you log in for the first time, you may see a **Get started** window. Feel free to review the contents and close the window.
 
-**Note:** If you get a warning message that your connection is not private, follow the instructions in the previous section.
+5\. Confirm that you are in the provider organization for your username (upper right) and then click on **Develop APIs and products**.
 
-![alt text][pic9]
-
-8\. When you log in for the first time, you may see a **Get started** window. Feel free to review the contents and close the window.
-
-9\. Confirm that you are in the provider organization for your username (upper right) and then click on **Develop APIs and products**.
+**Note:** If you do not see that you are in the provider organization for your username and see "no-permission" at the end of the URL, make sure that you followed the instructions to Setup Common registry for API Manager ->
+[Setup Common registry for API Manager](../../Login-apic/index.md)
 
 ![alt text][pic10]
 
-10\. We are now able to begin to create APIs and Products.  Click **Add**.
+6\. We are now able to begin to create APIs and Products.  Click **Add**.
 
 ![alt text][pic11]
 
-11\. Click **API (from REST, GraphQL or SOAP)**.
+7\. Click **API (from REST, GraphQL or SOAP)**.
 
 ![alt text][pic12]
 
-12\. Click **From existing GraphQL service (GraphQL proxy)** under **Import** and click **Next**.
+8\. Click **From existing GraphQL service (GraphQL proxy)** under **Create** and click **Next**.
 
 ![alt text][pic13]
 
-13\. Enter the following values and click **Next**. You can accept the default values for the rest of the fields.
+9\. Enter the following values and click **Next**. You can accept the default values for the rest of the fields.
 
 - Title:  accounts
 - GraphQL server URL:  https://graphql-test-server.us-east.cf.appdomain.cloud/accounts/graphql
 
 ![alt text][pic14]
 
-14\. The schema validator reports warning and errors if found. There are two warning in the accounts schema imported from the server. You can review the schema warning details and also select the end points interested for this proxy. Select all the available end points. Click **View**.
+10\. The schema validator reports warning and errors if found. There are two warning in the accounts schema imported from the server. You can review the schema warning details and also select the end points interested for this proxy. Select all the available end points. Click **View**.
 
 ![alt text][pic15]
 
-15\. A review of the schema shows that no limits are set on the size of the lists. You will fix these warnings in later steps. Click on the **X** to close the window.
+11\. A review of the schema shows that no limits are set on the size of the lists. You will fix these warnings in later steps. Click on the **X** to close the window.
 
 ![alt text][pic16]
 
-16\. Click **Next** to continue.
+12\. Click **Next** to continue.
 
 ![alt text][pic17]
 
-17\. Make sure both **Secure using Client ID** and **CORS** are selected and click **Next**.
+13\. Make sure both **Secure using Client ID** and **CORS** are selected and click **Next**.
 
 ![alt text][pic18]
 
-18\. API Connect successfully created a GraphQL proxy API. You can edit the API to view more details on the proxy API just created. Click **Edit API** to continue.
+14\. API Connect successfully created a GraphQL proxy API. You can edit the API to view more details on the proxy API just created. Click **Edit API** to continue.
 
 ![alt text][pic19]
 
-19\. GraphQL APIs are structured the same as REST APIs with some additional options. Just like REST APIs, you will be able to add security definitions, properties and activity logs from the left menu bar. 
+15\. GraphQL APIs are structured the same as REST APIs with some additional options. Just like REST APIs, you will be able to add security definitions, properties and activity logs from the left menu bar. 
 
 You can also view the Source and Assemble tabs similar to REST APIs. You will notice a new tab for GraphQL APIs. 
 
@@ -138,23 +112,23 @@ Click on **GraphQL Schema** tab to view the schema.
 
 ![alt text][pic20]
 
-20\. The GraphQL Schema editor displays Type and Weight information. The weighting factor is used when calculating the type cost for a request to the GraphQL API. For example, a field that requires extensive CPU or memory use on the server to retrieve its value would be given a higher cost.
+16\. The GraphQL Schema editor displays Type and Weight information. The weighting factor is used when calculating the type cost for a request to the GraphQL API. For example, a field that requires extensive CPU or memory use on the server to retrieve its value would be given a higher cost.
 
 ![alt text][pic21]
 
-21\. Click on the **Warning** icon to review the warning details for Query and Account. 
+17\. Click on the **Warning** icon to review the warning details for Query and Account. 
 
 ![alt text][pic22]
 
-22\. The Warnings window gives us the option to fix the warning by applying the limits. You can either click Apply for each warning or click Apply All to fix both warnings. Click **Apply all**.
+18\. The Warnings window gives us the option to fix the warning by applying the limits. You can either click Apply for each warning or click Apply All to fix both warnings. Click **Apply all**.
 
 ![alt text][pic23]
 
-23\. You will see a summary of the suggestions. Click **Apply**.
+19\. You will see a summary of the suggestions. Click **Apply**.
 
 ![alt text][pic24]
 
-24\. After applying the recommendations, you will no longer see any warning messages.  Click **Save** to save the API definition.
+20\. After applying the recommendations, you will no longer see any warning messages.  Click **Save** to save the API definition.
 
 ![alt text][pic25]
 
@@ -162,13 +136,13 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic26]
 
-25\. Select the **Gateway** tab to view the API. The flow is automatically created as part of the initial API creation. You may apply addition logic by dragging and dropping items from the pallet to the canvas. In this lab, we will not be adding additional logic.
+21\. Select the **Gateway** tab to view the API. The flow is automatically created as part of the initial API creation. You may apply addition logic by dragging and dropping items from the pallet to the canvas. In this lab, we will not be adding additional logic.
 
 ![alt text][pic27]
 
 ![alt text][pic28]
 
-26\. To publish the API, toggle the switch from offline to online.
+22\. To publish the API, toggle the switch from offline to online.
 
 ![alt text][pic29]
 
@@ -233,7 +207,7 @@ In the API Designer, you have the ability to test the API immediately after crea
 ```
 ![alt text][pic33]
 
-**Note:** You may get a **No response received** popup. Click **Here**.
+**Note:** You may get a **No response received** popup. Click **Open the server**.
 
 ![alt text][pic34]
 
@@ -245,9 +219,7 @@ You may need to add a security exception. To add an exception in the Chrome brow
 
 ![alt text][pic36]
 
-Blindly type **thisisunsafe**.  This should direct you to a new page that states **401 - Unauthorized**.
-
-![alt text][pic37]
+Blindly type **thisisunsafe**.  
 
 To add an exception in the Firefox browser, click **Advanced** and click **Accept the Risk and Continue**.
 
@@ -255,11 +227,7 @@ To add an exception in the Firefox browser, click **Advanced** and click **Accep
 
 ![alt text][pic39]
 
-This will direct you to a new page that states **401 - Unauthorized**.
-
-![alt text][pic40]
-
-You could run the query from this editor. However, you would need to input the Client ID.
+You could run the query from this editor. However, you would need to input the Client ID.   **Note:** Steps 9-12 show you how to get the Client ID.  For this step, we will return back to the **API Connect** browser.
 
 5\. Navigate back to the **API Connect** browser window.
 
@@ -275,7 +243,7 @@ You could run the query from this editor. However, you would need to input the C
 
 ![alt text][pic43]
 
-**Note:** You may get a **No response received** popup. Click **Here**.
+**Note:** You may get a **No response received** popup. Click **Open the server**.
 
 ![alt text][pic34]
 
@@ -293,7 +261,7 @@ This will take you to the GraphiQL editor.
 
 ![alt text][pic45]
 
-12\. Navigate to the **GraphiQL editor** window.
+12\. Navigate to the **GraphiQL editor** browser window.
 
 Paste the Client ID that you copied in the previous step into the **Client ID** field and click **Set credentials**.
 
@@ -320,6 +288,8 @@ Paste the Client ID that you copied in the previous step into the **Client ID** 
 
 15\. You can request additional data fields (refer to the schema editor for details). GraphQL may reject if certain fields are locked or prohibited. To test this, enter CreditCard information in the request field and click **Execute Query**.
 
+**Note:** creditCard is outside of accounts object.
+
 ```
 {
   accounts(limit: 2) {
@@ -345,7 +315,31 @@ Paste the Client ID that you copied in the previous step into the **Client ID** 
 
 ![alt text][pic50]
 
-17\. Submit another request to get account and shipping address details and click **Execute Query**.
+17\. Navigate back to the **API Connect** browser window and click on **GraphQL Schema**.
+
+![alt text][pic88]
+
+18\. Expand the **Query** type.
+
+![alt text][pic89]
+
+19\. Notice that only **accounts** is listed.
+
+![alt text][pic90]
+
+20\. Expand the **Account** type.
+
+![alt text][pic91]
+
+21\. Notice that creditCard is listed under the Account object.
+
+![alt text][pic92]
+
+22\. Navigate to the **GraphiQL editor** browser window. 
+
+23\. Submit another request to get account, shipping address, and credit card details and click **Execute Query**.
+
+**Note:** creditCard is inside of accounts object.
 
 ```
 {
@@ -357,15 +351,19 @@ Paste the Client ID that you copied in the previous step into the **Client ID** 
     shippingAddress {
       building
       street
-      state
-      zip
     }
+  creditCard {
+    number
+    expirationDate
   }
+}
 }
 ```
 ![alt text][pic51]
 
-18\. This time values are returned without errors.
+24\. This time values are returned without errors.
+
+While outside of the scope of this lab, you could use the Redaction policy to completely remove or to redact specified fields from the Request body, the Response body, and the activity logs. You might find this policy useful for removing or blocking out sensitive data (for example, credit card details) for legal, security, or other reasons.
 
 ![alt text][pic52]
 
@@ -392,6 +390,12 @@ Paste the Client ID that you copied in the previous step into the **Client ID** 
 [pic50]: images/50.png
 [pic51]: images/51.png
 [pic52]: images/52.png
+[pic88]: images/88.png
+[pic89]: images/89.png
+[pic90]: images/90.png
+[pic91]: images/91.png
+[pic92]: images/92.png
+
 
 # 4. Create a Product<a name="create_product"></a>
 
@@ -420,7 +424,7 @@ In this lab, we will make the API available to developers. In order to do so, th
 
 ![alt text][pic58]
 
-7\. Select **accounts** and click **Next**.
+7\. Select **accounts** and click **Next**.  **Note:** Depending on how many labs you have completed, you may see additional APIs in your list.
 
 ![alt text][pic59]
 
@@ -430,7 +434,7 @@ In this lab, we will make the API available to developers. In order to do so, th
 
 9\. Select **Publish product** and confirm that **Public** is selected for **Visibility** and **Authenticated** is selected for **Subscribability** and click **Next**.
 
-![alt text]pic61]
+![alt text][pic61]
 
 10\. Once the product has been published.  Click **Done**.
 
@@ -473,7 +477,7 @@ In this lab, we will make the API available to developers. In order to do so, th
 
 A Portal Administrator can customize the look and feel to their organizational specifications. The default Developer Portal looks like the image below.  Note:  Depending on what you have published, the Products that you see may be different.
 
-**Note:** If you get a warning message that your connection is not private, follow the instructions in the previous section.
+**Note:** If you get a warning message that your connection is not private.
 
 ![alt text][pic68]
 
@@ -483,7 +487,7 @@ Click on **Sign in**.
 
 ![alt text][pic69]
 
-8\. Enter your Username and Password you just created.  Click **Sign in**.
+8\. Use the Username and Password for the Portal account that you created in "The Developer Portal Experience" lab and click **Sign in**.
 
 ![alt text][pic70]
 
@@ -552,6 +556,8 @@ You should be on a screen that shows the API and Plan for the **Accounts 1.0.0**
 23\. For the **API Key**, enter the value that you copied for the Application **Client Key**.
 
 ![alt text][pic84]
+
+<span style="color:red">**Comment to Instructors and Students:**  An issue has been noted that the editor does not render and you are not able to enter account and shipping address detail.  The issue is currently being investigated.</span>
 
 24\. Enter account and shipping address details and click the **Execute Query** icon.
 

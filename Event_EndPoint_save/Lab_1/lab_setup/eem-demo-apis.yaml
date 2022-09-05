@@ -1,0 +1,100 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: eem-demo-apis
+  namespace: %NAMESPACE%
+  labels:
+    app: eem-demo-apis
+    app.kubernetes.io/component: eem-demo-apis
+    app.kubernetes.io/instance: eem-demo-apis
+    app.kubernetes.io/part-of: eem-demo-apis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eem-demo-apis
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: eem-demo-apis
+        app.kubernetes.io/component: eem-demo-apis
+        app.kubernetes.io/instance: eem-demo-apis
+        app.kubernetes.io/part-of: eem-demo-apis
+    spec:
+      volumes:
+        - name: certs
+          secret:
+            secretName: %ES_CLUSTER%-cluster-ca-cert
+            items:
+              - key: ca.p12
+                path: cert.p12
+        - name: temp
+          emptyDir: {}
+      containers:
+        - name: eem-demo-kafka-seed
+          image: quay.io/nictownsend/eem-demo-datagen
+          env:
+            - name: BOOTSTRAP_ADDRESS
+              value: >-
+                %ES_BOOTSTRAP_ADDRESS%
+            - name: SSL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: %ES_CLUSTER%-cluster-ca-cert
+                  key: ca.password
+            - name: USERNAME
+              value: %ES_CLUSTER%--eem-user
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: %ES_CLUSTER%--eem-user
+                  key: password
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 500Mi
+          volumeMounts:
+            - name: certs
+              mountPath: /app/cas
+            - name: temp
+              mountPath: /tmp
+          imagePullPolicy: Always
+        - name: eem-demo-rest-apis
+          image: quay.io/dale-lane/eem-demo-apis
+          ports:
+            - name: rest-api
+              containerPort: 1880
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 400Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          imagePullPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: eem-demo-rest-api
+  namespace: %NAMESPACE%
+  labels:
+    app: eem-demo-apis
+    app.kubernetes.io/component: eem-demo-apis
+    app.kubernetes.io/instance: eem-demo-apis
+    app.kubernetes.io/part-of: eem-demo-apis
+    app.openshift.io/runtime-namespace: cp4i
+spec:
+  ports:
+    - protocol: TCP
+      port: 1880
+      targetPort: rest-api
+      name: rest-api
+  selector:
+    app.kubernetes.io/component: eem-demo-apis
+  type: ClusterIP

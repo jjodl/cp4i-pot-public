@@ -4,7 +4,7 @@ Get hands on building API and Event driven flows in this day in the life experie
 [Return to Integration page](../index.md)
 
 ## Kafka Pre-Req
-Need to complete [Kafka-Pre-Lab.md](Kafka-Pre-lab/Kafka-Pre-Lab.md) before starting these Labs 
+Need to complete [Kafka-Pre-Lab.md](../Kafka-Pre-lab/Kafka-Pre-Lab.md) before starting these Labs 
 
 ## Lab Abstracts
 
