@@ -4,6 +4,13 @@
 In this lab, you will follow steps to consume the flight landing events using Kafka Clients  kafka-console-consumer.sh, and Java Client.
 <br>
 
+Will will need to download the kafka lib for this to the VDI that you are using for the labs.  
+Download the **kafka_2.13 tar file.** <br>
+    Click here and save the tar file - [kafka_2.13-3.2.1.tar.gz](../source/kafka_2.13-3.2.1.tar.gz)
+
+You will then need to untar it into the /home/student directory. 
+
+
 [Return to main EEM lab page](../index.md#lab-abstracts)
 
 # 1. Consuming Flight Landing Events
