@@ -134,7 +134,7 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 	![](./images/image207.png)
 	
-1. One of the environment variables is *SC* for Storage Class. If you are running on a ROKS cluster use the **ibmc-file-gold-gid** storage class and comment out the *managed-nfs-storage* line. If you are running on a CoC cluster use the **managed-nfs-storage** storage class and comment out the line for *ibmc-file-gold-gid*. 
+1. One of the environment variables is *SC* for Storage Class. If you are running on a ROKS cluster use the **ibmc-file-gold-gid** storage class and comment out the *managed-nfs-storage* line. If you are running on a CoC cluster use the **ocs-storagecluster-ceph-rbd** storage class and comment out the line for *ibmc-file-gold-gid*. 
 
 	If you are attending a PoT, ask the instructor which Red Hat cluster you are using.
 	
