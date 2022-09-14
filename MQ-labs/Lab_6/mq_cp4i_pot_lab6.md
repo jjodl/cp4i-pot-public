@@ -228,7 +228,7 @@ This lab shows you how to write yaml to create the queue manager, application qu
 
 	![](./images/image10.png)
 
-	**The storage class on the COC clusters is managed-nfs-storage. If you are an IBMer running on on ROKS then you also need to change SC to ibmc-file-gold-gid.**	
+	**The storage class on the COC clusters is ocs-storagecluster-ceph-rbd you will need to change this in the script. If you are an IBMer running on on ROKS then you also need to change SC to ibmc-file-gold-gid.**	
 	
 	![](./images/image11.png)
 	 	
