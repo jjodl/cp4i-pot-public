@@ -221,6 +221,7 @@ This lab shows you how to write yaml to create the queue manager, application qu
 	![](./images/image8.png)
 	
 1. If necessary, change the value for TARGET_NAMESPACE to your project name. Click the hamburger menu in top right corner and select *Find and Replace*.
+**Note** for the Storage class use **ocs-storagecluster-ceph-rbd**
 
 	![](./images/image9.png)
 
