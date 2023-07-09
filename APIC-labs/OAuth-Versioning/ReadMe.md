@@ -1,10 +1,10 @@
 # IBM API Connect
 
-##Add OAuth Security to your API and use Lifecycle Controls to Version Your API
+## Add OAuth Security to your API and use Lifecycle Controls to Version Your API
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
-<span style="color: red">Lab prerequisite:</span> "The Developer Portal Experience"
+Lab prerequisite: "The Developer Portal Experience"
 
 ---
 
@@ -69,10 +69,10 @@ In this section, you will create a new OAuth provider API, configure which grant
 
 # 2a. Configure Authentication URL User Registry <a name="configure_registry"></a>
 
-In order to configure user authentication, you must first define the registry to use, which may be LDAP, local user registry, or an authentication URL. For this lab, we will implement an Authentication
+In order to configure user authentication, you must first define the registry to use, which may be LDAP, local user registry, or an authentication URL. For this lab, you will implement an Authentication
 URL.
 
-1\.If you're not logged before, follow these instructions to access to the API Manager -> [Login to the API Manager](../Login-apic/ReadMe.md)
+1\.If you're not logged before, follow these instructions to access to the API Manager -> [Login to the API Manager](../APIC-prereq/Login-apic/index.md)
 
 2\. In the left menu, click on **Resources**.  As you hover over the icon, you will see the item name.
 
@@ -128,11 +128,11 @@ URL.
 
 ![alt text][pic18]
 
-6\. One scope, **sample_scope_1**, is automatically created.  
+6\. One scope, **sample&#95;scope&#95;1**, is automatically created.  
 
 ![alt text][pic19]
 
-7\. Replace **sample_scope_1** with **customer** for Scope **Name** and replace **Sample scope definition 1** with **Access to Customer API** for Scope **Description**.  Click **Next**.
+7\. Replace **sample&#95;scope&#95;1** with **customer** for Scope **Name** and replace **Sample scope definition 1** with **Access to Customer API** for Scope **Description**.  Click **Next**.
 
 ![alt text][pic20]
 
@@ -258,17 +258,15 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic39]
 
-7\. Click on the **clientId, ClientSecret** entry and make sure is not select **clientId** and **ClientSecret**.  This will remove the checkmark that is next to them.
-
-8\. Select **oauth-1** and click on **Scopes** and select **customer**.  Click **Create**.
+7\. Select **oauth-1** and click on **Scopes** and select **customer**.  Click **Create**.
 
 ![alt text][pic90]
 
-9\. Click **Save**.
+8\. Click **Save**.
 
 ![alt text][pic69]
 
-10\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+9\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic70]
 
@@ -285,7 +283,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 [pic42]: images/42.png
 [pic69]: images/69.png
 [pic70]: images/70.png
-[pic90]: images/90a.png
+[pic90]: images/90.png
 [pic91]: images/91.png
 
 # 6. Create a New Product <a name="create_product"></a>

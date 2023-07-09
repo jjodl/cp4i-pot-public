@@ -14,13 +14,6 @@ IBM API Connect has several out of the box personas. Some of these personas will
 
 [Return to main lab section](../index.md#lab-section)
 
-## Lab PreReq
-Before starting the **API Connect labs** make sure that you complete the following lab prereq setup. 
-
-|  Subject                            | Description                                            |                                                               
-|-------------------------|------------------------------------------------------------------------------------------------------------|
-| [Setup login for API Manager and create Consumer Org](APIC-prereq/index.md)      | Before starting the **APIC Labs** You will setup your userid in the  **Common Services User Registry** and also create a **Consumer Org** for doing the Dev Portal lab. 
-
 ## Lab Abstracts
 
 |  Subject                            | Description                                            |                                                               
