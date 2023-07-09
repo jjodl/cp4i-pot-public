@@ -26,9 +26,19 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 - Easily portable to other clouds, since this can run on RedHat OpenShift. This allows you to install and operate the Pak identically across multiple cloud vendors.  
 
 ## Lab section:
+
+**For the POT July 13th and 14th** we will be using the **obi-wan** and **mace** clusters. 
+
+This is the **OCP console** and you will use the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
+1\. **obi-wan -** [https://console-openshift-console.apps.obi-wan.coc-ibm.com/](https://console-openshift-console.apps.obi-wan.coc-ibm.com/)<br>
+2\. **mace -** [https://console-openshift-console.apps.mace.coc-ibm.com/](https://console-openshift-console.apps.mace.coc-ibm.com/)
+
+For the **Platform Navigator** use this link and select Enterprise LDAP for authentication type, and you will use the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
+1\. **obi-wan -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)<br>
+2\. **mace -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)
+
 Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br>
 **[Review Lab environment.](Setup/VDI-overview/index.md)**
-
 
 
 |  Topic                                | Description                                                                
