@@ -37,9 +37,11 @@ For the **Platform Navigator** use this link and select Enterprise LDAP for auth
 1\. **obi-wan -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)<br>
 2\. **mace -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)
 
-Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br>
-**[Review Lab environment.](Setup/VDI-overview/index.md)**
+For the **Event Automation** labs we will be using a different cluster.  Use this link to access the Event Authoring UI. using the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
+[my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com](my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com)
 
+Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br>
+**[Review Lab environment.](Setup/VDI-overview/index.md)**<br>
 
 |  Topic                                | Description                                                                
 |---------------------------------------|-----------------------------------------------------------------------------|
