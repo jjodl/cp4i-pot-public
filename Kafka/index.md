@@ -5,7 +5,7 @@ IBM Event Automation, a fully composable solution, enables businesses to help me
 [Return to main Lab section](../index.md#lab-section)
 
 ## Lab PreReq
-Before starting the **Event Automation labs** make sure that you complete the following prereq setup. 
+Before starting the **Event Automation labs** make sure that you complete the following pre-req setup. 
 
 |  Pre-req                            | Description                                         
 |-----------------------------|------------------------------------------------------------------------------------------------------------|
