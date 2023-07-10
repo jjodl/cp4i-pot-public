@@ -11,9 +11,7 @@ Before starting the **Event Automation labs** make sure that you complete the fo
 |-----------------------------|------------------------------------------------------------------------------------------------------------|
 | [Create Connection to Kafka cluster.](EDA-Pre-lab/kafkasetup/kafka-connect.md)      | Before starting the **Event Automation labs** make sure that you have completed this.  You will follow the steps to create Kafka connection and save credentials and certs for all EDA labs.
 
-|  Pre-req                            | Description                                         
-|-----------------------------|------------------------------------------------------------------------------------------------------------|
-| [Create Connection to Kafka cluster.](EDA-Pre-lab/kafkasetup/kafka-connect.md)      | Before starting the **Event Automation labs** make sure that you have completed this.  You will follow the steps to create Kafka connection and save credentials and certs for all EDA labs.
+
 ## Lab Abstracts
 
 |  Subject                            | Description                                         
