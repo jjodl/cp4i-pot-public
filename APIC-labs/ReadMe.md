@@ -26,8 +26,7 @@ IBM API Connect has several out of the box personas. Some of these personas will
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | [GraphQL Proxy API](GraphQL/ReadMe.md)       | **Creating a GraphQL Proxy API:**  In this lab, we will explore how to define GraphQL APIs that proxy to a backend GraphQL server.<br><br>**Prequisite:** None.<br><br>**Primary personas**:  Shavon (API Developer) and Andre (Application Developer)
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| [StepZen GraphQL API](StepZen-GraphQL/ReadMe.md)       | **Creating a StepZen GraphQL API:** In this lab, we will leverage an existing REST API to create StepZen GraphQL Proxy and then expose the GraphQL Proxy through IBM API Connect. By using GraphQL, one can Query for fields that they are interested in thus reducing the response payload and network traffic.
-<br><br>**Prequisite:** None.<br><br>**Primary personas**:  Shavon (API Developer) and Andre (Application Developer)
+| [StepZen GraphQL API](StepZen-GraphQL/ReadMe.md)       | **Creating a StepZen GraphQL API:** In this lab, we will leverage an existing REST API to create StepZen GraphQL Proxy and then expose the GraphQL Proxy through IBM API Connect. By using GraphQL, one can Query for fields that they are interested in thus reducing the response payload and network traffic. <br><br>**Prequisite:** None.<br><br>**Primary personas**:  Shavon (API Developer) and Andre (Application Developer)
 
 
 [Return to main lab section](../index.md#lab-section)
