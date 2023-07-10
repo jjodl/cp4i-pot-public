@@ -22,6 +22,5 @@ Before starting the **Event Automation labs** make sure that you complete the fo
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | [Event Automation Authoring Experience](Event-Authoring/index.md)       | **Event Automation Experience**  Define business scenarios in an intuitive, easy-to-use authoring canvas. Detect whenever they arise and start acting in real-time when it matters the most.   
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-|
 
 [Return to main Lab section](../index.md#lab-section)
