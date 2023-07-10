@@ -36,6 +36,7 @@ In this section, we use App Connect Designer to create a flow that will be expos
 4\. In the upper left, always make sure you are in the correct namespace.  Select the tab on the left to open the Catalog screen. The App Connect catalog provides a list of applications and APIs that are available.
 
 ![alt text][pic3]
+![alt text][pic3a]
 
 5\. Click on the App Connect Designer dashboard icon:
 
@@ -118,7 +119,7 @@ A helpful feature offered by the Smart Connectors is the **“Try this action”
 
 ![alt text][pic17]
 
-19\. Now we will map our API Response keys to the respective values we want our consumer to obtain from ServiceNow. Let us start with the **SystemUserID** field. 
+19\. Now we will map our API Response keys to the respective values we want our consumer to obtain from ServiceNow. Let us start with the **Sys ID** field. 
 
 * You can click on the hamburger icon next to SystemUserID field and you will see the list of Available mappings.
 * For this lab, we will just start typing.   Type in **User** and you will see all the mappings found.  Select the **System user ID**
@@ -134,6 +135,7 @@ A helpful feature offered by the Smart Connectors is the **“Try this action”
 [pic1]: images/1.png
 [pic2]: images/2.png
 [pic3]: images/3.png
+[pic3a]: images/3a.png
 [pic4]: images/4.png
 [pic5]: images/5.png
 [pic6]: images/6.png
