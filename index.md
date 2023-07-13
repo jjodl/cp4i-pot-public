@@ -35,7 +35,7 @@ This is the **OCP console** and you will use the userid and password provided to
 
 For the **Platform Navigator** use this link and select Enterprise LDAP for authentication type, and you will use the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
 1\. **obi-wan -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)<br>
-2\. **mace -** [https://cpd-cp4i.apps.obi-wan.coc-ibm.com/](https://cpd-cp4i.apps.obi-wan.coc-ibm.com/)
+2\. **mace -** [https://cpd-cp4i.apps.mace.coc-ibm.com/](https://cpd-cp4i.apps.mace.coc-ibm.com/)
 
 For the **Event Automation** labs we will be using a different cluster.  Use this link to access the Event Authoring UI. using the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
 [https://my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com/](https://my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com/)
