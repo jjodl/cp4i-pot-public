@@ -43,6 +43,21 @@ For the **Event Automation** labs we will be using a different cluster.  Use thi
 Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br>
 **[Review Lab environment.](Setup/VDI-overview/index.md)**<br>
 
+# Event Streams UI
+https://cpd-cp4i.apps.cody.coc-ibm.com/integration/kafka-clusters/cp4i-eventstreams/es-demo/gettingstarted
+cody<student number> (i.e. cody4)  /  CodyUser!
+## Lab 6 - Destination Topic Information
+Kafka Cluster: es-demo-kafka-bootstrap.cp4i-eventstreams.svc:9095
+kafka-demo-apps  /  lJghMPF5VbWfoe1Qb2bAEfWDwtHNc5Mn
+# Event Endpoint Management UI
+https://my-eem-manager-ibm-eem-manager-event-automation.apps.cody.coc-ibm.com/catalog
+eem-admin / Th1$ISTh3Adm1nPa$SW0Rd
+# Event Processing UI
+https://my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com
+ep-admin / Th1$ISTh3Adm1nPa$SW0Rd
+
+
+
 |  Topic                                | Description                                                                
 |---------------------------------------|-----------------------------------------------------------------------------|
 | [API Management Experiences](APIC-labs/ReadMe.md)          | This section you will explore an API Management platform for use in your API Economy. IBM API Connect enables users to create, assemble, manage, secure and socialize APIs  
