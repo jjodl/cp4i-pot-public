@@ -3,6 +3,21 @@ Get hands on building Event Automation flows.  Define business scenarios in an i
 
 [Return to kafka main page](../index.md#lab-abstracts)
 
+## Event Streams UI
+https://cpd-cp4i.apps.cody.coc-ibm.com/integration/kafka-clusters/cp4i-eventstreams/es-demo/gettingstarted
+<br>cody<student number> (i.e. cody4)  /  CodyUser!
+## Lab 6 - Destination Topic Information
+Kafka Cluster: es-demo-kafka-bootstrap.cp4i-eventstreams.svc:9095 <br>
+
+kafka-demo-apps  /  lJghMPF5VbWfoe1Qb2bAEfWDwtHNc5Mn
+## Event Endpoint Management UI
+https://my-eem-manager-ibm-eem-manager-event-automation.apps.cody.coc-ibm.com/catalog
+<br>eem-admin / Th1$ISTh3Adm1nPa$SW0Rd
+# Event Processing UI
+https://my-event-processing-ibm-ep-rt-event-automation.apps.cody.coc-ibm.com
+<br>ep-admin / Th1$ISTh3Adm1nPa$SW0Rd
+
+
 ## Lab Abstracts
 
 |  Subject                            | Description                                            |                                                               
