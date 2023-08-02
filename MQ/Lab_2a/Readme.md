@@ -366,7 +366,7 @@ MY.LOG.QUEUE – the queue manager will do that for us.**
 
 #### Reduce maxdepth on streaming queue
 
-1. First clear the messages from the stream queue. Still in MQ Explorer, click the elipsis to right of *MY.LOG.QUEUE* and select *Clear queue*.
+1. First clear the messages from the stream queue. Still in MQ Console, click the ellipsis to right of *MY.LOG.QUEUE* and select *Clear queue*.
 
 	![](./images/image47.png)
 
@@ -374,8 +374,10 @@ MY.LOG.QUEUE – the queue manager will do that for us.**
 
 	![](./images/image48.png)
 	
+	> <span style="color: Blue">**Note:** <BR>	Important to make sure both queue are empty.</span>
+
 	Both queues are now empty.
-	
+
 	![](./images/image49.png)
 	
 1. Click the elipsis for *MY.LOG.QUEUE* and select *View configuration*.
