@@ -1,296 +1,171 @@
 
-# IBM Cloud Pak for Integration - Creating AsyncAPI
+# IBM Integration - Creating AsyncAPI
 
-In this lab, students will go through steps on how to create a Topic in Event Streams, and build an AsyncApi and publish it the IBM API Connect Developer Portal and IBM Event Gateway.
+In this lab you will, review Kafka Topics that are managed in the Event Endpoint Management portal.  You will select the FLIGHT.LANDINGS topic and export as AsyncAPI for IBM API Connect Management Portal
 
 [Return to main EEM lab page](../index.md#lab-abstracts)
 
-# 1. IBM Event Streams
+## 1.0 Discover EEM Topics 
 
-## Create Topic 
+1. Now go to the tab for **my-eem-manager** and open in a new tab. 
 
-From the Cloud Pak for Integration Platform Navigator, open the IBM Event Streams Console. <br>
-If you need to review logging in to the Platform Navigator review the steps in the [Return to main lab page](../../index.md#lab-sections)
+    **NOTE:** If you already have a tab opened for EEM then go there.
 
-# 2.1 Create the Kafka topic<a name="Setup_kafka"></a>
+    ![](../images/eem1.png)
 
-1\. Now go to the tab for **es-demo** or you can click on the link from the home page and this will take you to the IBM Event Streams home page.   
+1. Now we will login to the eem manager using **eem-admin**. 
 
-![](../images/es1.png)
+    ![](../images/eem2.png)
 
-2\. Now we will create our topic. Click on the **Create a topic** tile. 
+1. Once login click on the **Topic icon** on the left side of the page.  This will open the Topics page. 
 
-![](../images/es2.png)
+    You should see the **FLIGHT.LANDINGS** topic.
+    
+    Click on the topic name.
 
-3\. Now enter the name of your topic.  Since this is a shared Kafka broker, use your userid as part of the topic name.  In this example, we are logged in as melch1 so the topic name is **melch1.FLIGHT.LANDINGS**.  Click **Next**.
+    ![](../images/eem3.png)
 
-![](../images/es3.png)
+1. We will now be on the page with all the information for this Topic.   You can view the Schema or Sample Message. 
 
-4\. Leave the partitions at 1 and click **Next**.
+    We will click on the **Export AsyncAPI for IBM API Connect**.
+    
+    This will open a window to save the FLIGHT.LANDINGS yaml. Make sure that **Save File** is selected and Click **OK**. 
 
-![](../images/es4.png)
+    ![](../images/eem4.png)
 
-5\. Since this is for a lab, change the Message retention to **A day** and click **Next**.
-**Note:** If we wanted to retain message longer we could change this to meet those needs.
+## 2.0 Import AsyncAPI into APIC
 
-![](../images/es5.png)
+Now that we have exported the FLIGHT.LANDINGS yaml we will login to the APIC Manager to import it.
 
-6\. For the Replicas, we will change the **Minimum in-sync replicas** to **1** and select **Replication factor:1**.  Note:  Make sure that the radial button next to Replication factor:1 is selected before clicking **Create topic**.
+1. Now from the Integration Instances select the **apim-demo** and open in a new window.
 
-![](../images/es6.png)
+    ![](../images/apic1.png)
 
-7\. Now you will be back on the Topics screen.  You may see other users topics in the list but make sure you see your topic you just created.  
-Created topic STUDENT04.FLIGHT.LANDINGS. <br>
+1. Now on the APIC login page make sure you are login already in the upper right corner.   In this example it is "kallus1"
 
-![](../images/es7.png)
+    Click on the login using the **Common Services User Registry**
 
-Download es-cert.pem, es-cert.p12 certificates to Downloads folder. <br>
+    ![](../images/apic2.png)
 
-### Important
-Save es-cert password into Notepad.
-<br>
+1. Now from the APIC homepage Select the **Develop APIs and products** from the tile or the icon on the left side of the screen. 
 
-![](../images/es-connect-to-cluster-escert-1.png)
+    ![](../images/apic3.png)
 
-The Scram Credentials, and the es-cert.pem certificate will be used during AsyncApi configuration in IBM Api Connect. <br>
+1. Now Click on **Add** and select **API**
 
-We will need to create JKS file based on es-cert.p12. App Connect KafkaConnector's needs JKS format. <br>
-Go to the **Downloads** directory where you have the es-certs
-and run the following command.  You will then see a es-cert.jks file.
+      ![](../images/apic4.png)
 
-**Note** for the srcstorepass and the deststorepass use the PKCS12 password you saved when you download the cert.
+1. You will see options for OpenAPI and AsyncAPI.   We will select **AsyncAPI**
 
-```
-cd ~/Downloads 
-/usr/bin/keytool -importkeystore -srckeystore es-cert.p12 \
-        -srcstoretype PKCS12 \
-        -destkeystore es-cert.jks \
-        -deststoretype JKS \
-	-srcstorepass xxxxxxx  \
-	-deststorepass xxxxxx \
-	-noprompt
-```
+    But you can also see how you can import OpenAPI's for SOAP, REST, GraphQL. 
 
-After running this command you will now have the es-cert.jks
-![](../images/es8.png)
+    ![](../images/apic5.png)
 
+1. Click **Next**
 
-The Scram Credentials, and the es-cert.jks certificate will be used in IBM App Connect Toolkit Flow to simulate flight landing events. <br>
+    ![](../images/apic6.png)
 
-### Important
-By now you should have saved the below in Notepad, <br>
-a) bootstrap address of your Event Streams Cluster, <br>
-b) student00-scram-credentials / and the password <br>
-c) es-cert.p12 <br>
-d) es-cert.jks<br>
+1. Now we will select **Drag and drop files here or click to upload**
 
+    ![](../images/apic7.png)
 
-# 2. Api Connect - Manager
+1. This will open the **File Upload window**  You should be in the */student/Downloads* directory.  Select the FLIGHT.LANDINGS.yaml you downloaded from EEM and click Open.  
 
-## Create AsyncAPI
+    ![](../images/apic8.png)
 
-From the IBM Cloud Pak for Integration Platform Navigator, open the Api Management Console. <br>
+1. Should show that the yaml has been successfully validated. 
 
-From the Home page select "Develop APIs and products" tile.<br>
+    Click **Next**
 
-![](../images/asyn1.png)
+    ![](../images/apic9.png)
 
-Click on Add and select AsyncAPI! <br>
-![](../images/asyn2.png)
+1. Click **Next**
 
-<br>
-Title: student00-asyncapi-flight-landings<br>
-Summary: Events emitted when a flight lands<br>
-Bootstrap Servers: Copy/Paste the bootstrap address you saved from the kafka pre-lab steps<br>
-Topic Name: melch1.FLIGHT.LANDINGS (change the 00 to the number of your topic<br>
-Security Protocol: SASL_SSL<br>
-SASL mechanism: SCRAM-SHA-512<br>
-SASL Username: melch1 (scram-credentials you saved from the kafka pre-lab steps)<br>
-SASL Password: Copy/Paste the Scram Password you saved from the kafka pre-lab steps<br>
-Transport CA Certificate: Drag/Drop the es-cert.pem from the Downloads folder
-<br>
+    ![](../images/apic10.png)
 
-![](../images/apic-create-api-1.png)
-<br><br>
-![](../images/apic-create-api-2.png)
-<br><br>
+1. Do not select Activate API. Leave unselected and Click **Next**
 
+    ![](../images/apic11.png)
 
-## Edit the API
+1. Should now show that the AsyncAPI definition was generated. 
 
-Edit the API to add the Flight Landing Event Schema.<br><br>
-Click on the Source Icon as below,
-![](../images/apic-edit-api-addschema.png)
+    Click **Edit**
 
-Replace "message: {}" line as below <br>
-![](../images/apic-edit-api-addschema-2.png) <br>
-Double click "message: {}" to select/highlight the entire line. Now, copy and paste the below Avro schema.<br>
+    ![](../images/apic12.png)
 
-```
-      message:
-        name: landingEvent
-        title: Flight landing event
-        summary: Flight landing information
-        description: >-
-          This API provides a stream of events based on the landing of planes at
-          Bodapati Airport
-        schemaFormat: application/vnd.aai.asyncapi;version=2.0.0
-        contentType: application/json
-        payload:
-          type: object
-          required:
-            - flight
-            - terminal
-            - passengers
-          properties:
-            flight:
-              description: ID for the flight that has landed
-              type: string
-            terminal:
-              description: Which terminal the flight has landed at
-              type: string
-            passengers:
-              description: Number of passengers on the flight
-              type: string
-            additionalProperties: false
-        examples:
-          - payload: |
-              { "flight" : "AI100",  "terminal" : "2", "passengers": "100"}
-```
-Save the API.<br><br>
+1. There is not much to review in here so go ahead and select the **Develop APIs and products** from the icon on the left side of the screen.
 
+    ![](../images/apic13.png)
 
-## Create Product & Add API
+1. You will now see your AsyncAPI for FLIGHT.LANDINGS
 
+    ![](../images/apic14.png)
 
-![](../images/apic-create-product.png)
+### 2.1 Create new Product for AsyncAPI
 
-![](../images/apic-create-product-2.png)
+Now we will need to create a new Product for are AsyncAPI to publish them.  We will be publishing the AsyncAPI to the Event Gateway that is part of Event Automation and is configured in the Event Endpoint Manager.  
 
-Make sure to change the number in your new product to match you userid and topic.  
+1. First we will create a new Product that will be used to include varies AsyncAPIs.
+    Select the **Add** and select **Product**. 
 
-![](../images/apic-create-product-3.png)
+    ![](../images/prd1.png)
 
-![](../images/apic-create-product-4.png)
+1. This will be a New Product and click **Next** 
 
-![](../images/apic-create-product-5.png)
+    ![](../images/prd2.png)
 
-![](../images/apic-create-product-6.png)
+1. Now we will name the Product.  Just call it AsyncAPIs since this product will only be able to include AsyncAPIs.
 
-![](../images/apic-create-product-6.png)
+    Click **Next**
 
-When done you will see the Summary page.   Click Done to complete. 
+    ![](../images/prd3.png)
 
-![](../images/apic-create-product-7.png)
-<br>
+1. Here you will see that this product will only be able to enforce AsyncAPIs.
 
-## Publish the Product
-Now, publish the AsyncApi's product to the IBM Api Connect Developer Portal, and to the IBM Event Gateway.
+    Select the new FLIGHT.LANDINGS AsyncAPI and click **Next**
 
-![](../images/apic-stage-product-1.png)
+    ![](../images/prd4.png)
 
-![](../images/apic-stage-product-2.png)
+1. Keep the Default Plan as is and click **Next**
 
-![](../images/apic-stage-product-3.png)
+    ![](../images/prd5.png)
 
-Navigate to API Manager Home (Home Icon on top left) --> Manage Catalogs, select Sandbox Catalog.
+1. Click **Next** 
 
-Publish the Product to APIC Developer Portal, and Event Gateway.
+    ![](../images/prd6.png)
 
-![](../images/apic-publish-product-1.png)
+1. The Summary should show all green.   Click **Done**
 
-![](../images/apic-publish-product-2.png)
+    ![](../images/prd7.png)
 
-<br><br>
+### 2.2 Publish Product for the Developers to use in the Portal
 
-# 3. API Connect Developer Portal
+1. Now go back to the Develop page and select **Products**
 
-Locate the developer portal Url, by navigating to API Manager Home (Home Icon on top left) --> Manage Catalogs, select Sandbox Catalog.
+    You will see your new AsyncAPIs product.  Click on the three dots on the right and select **Publish**
 
-Click on "Catalog Settings" tab.
-![](../images/apic-dev-portal-navigate.png)
+    ![](../images/prd8.png)
 
-Click on Portal tab on left panel, and copy the Portal URL.
-![](../images/apic-dev-portal-navigate.png)
+1. On the Publish product screen you will select which catalog you will publish this to. Since we only have the Sandbox catalog select that and click **Next** 
 
+    ![](../images/prd9.png)
 
-Signon to API Connect Developer Portal
+1. Leave the defaults on this page and Click **Publish**
 
-![](../images/apic-dev-portal-signon.png)
+    ![](../images/prd10.png)
 
-![](../images/apic-dev-portal-1.png)
+1. You should get a notifiation that this AsyncAPI was published.   You can close it by clicking the "x".
 
+    Click on the **Products** tab then. 
 
-## Subscribe to AsyncAPI
+    ![](../images/prd11.png)
 
-Select student00-asyncapis Product
+1. You will see your new product is available.  
 
-![](../images/apic-dev-portal-subscribe-1.png)
+    ![](../images/prd12.png)
 
-![](../images/apic-dev-portal-subscribe-2.png)
+## RECAP
 
-![](../images/apic-dev-portal-subscribe-3.png)
-
-Important: 
-Copy and Save the Key (ClientId), and the Secret into Notepad. These will be used by the Async Client java application.
-
-![](../images/apic-dev-portal-subscribe-4.png)
-
-Select the new application that you just created.
-![](../images/apic-dev-portal-subscribe-5.png)
-
-![](../images/apic-dev-portal-subscribe-6.png)
-
-<br><br>
-
-# 4. Event Gateway Bootstrap certificate
-
-We will now need to obtain Event Gateway bootstrap certificate, to be used by the Kafka Consumer programs. <br>
-
-First we will need to get the ocp login for our account.  Sign in to the OCP cluster provide by instructor and use the credentials you were assigned.   Here we are using palpatine4.
-
-First from the OCP console in the upper right click the the drop down and select Copy Login.
-
-![](../images/ocp1.png)
-
-You will see a new tab select display Token
-Copy the token.
-
-**Example** oc login --token=sha256~xxxx --server=https://xxxx-coc-cluster:32167
-
-![](../images/ocp2.png)
-
-
-From the command line, copy and paste the url to logon to OpenShift CLI. <br>
-
-![](../images/ocp3.png)
-
-```
-cd ~/Downloads
-
-EVENT_GW_ROUTE_NAME=`oc get route -n cp4i-apic | grep event-gw-client | awk '{print$1}'`
-BOOTSTRAP_HOST=`oc get route $EVENT_GW_ROUTE_NAME -n cp4i-apic  -o jsonpath="{.spec.host}"`
-
-echo -n | openssl s_client -connect $BOOTSTRAP_HOST:443 -servername $BOOTSTRAP_HOST -showcerts | openssl x509 > bootstrap.crt
-
-/usr/bin/keytool -import -noprompt \
-        -alias bootstrapca \
-        -file bootstrap.crt \
-        -keystore bootstrap.p12 -storepass passw0rd
-/usr/bin/keytool -importkeystore -srckeystore bootstrap.p12 \
-        -srcstoretype PKCS12 \
-        -destkeystore bootstrap.jks \
-        -deststoretype JKS \
-	      -srcstorepass passw0rd  \
-	      -deststorepass passw0rd \
-	      -noprompt
-```
-<br>
-
-Important: <br>
-The path, and bootstrap.p12 will be used in kafka-sonsole-sonsumer.sh program. <br>
-The path, and bootstrap.jks will be used in java client application. <br>
-<br>
 
 
 <br>

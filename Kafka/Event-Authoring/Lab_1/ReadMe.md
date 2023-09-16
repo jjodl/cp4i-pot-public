@@ -1,393 +1,194 @@
-# IBM App Connect Enterprise
+# Discover the topic to use and filter events based on particular properties
 
-## App Connect Kafka Designer Event flow
+For this scenario, you need a source of order events. A good place to discover sources of event streams to process is the catalog in Event Endpoint Management.
+When processing events, we can use filter operations to select a subset
+that we want to use. Filtering works on individual events in the stream.
 
-[Return to main lab page](../index.md)
+# 1.1 Discover the topic to use
 
----
+In these labs the instructor will act as the Event Endpoint Management administrator to expose the topics that students will need to complete the labs.   
 
-# Table of Contents 
-- [1. Introduction](#introduction)
-- [2. Setup connection to Smart connectors for this lab](#Setup_connections)
-  * [2.1. Create the Kafka topic.](#Setup_kafka)
-	* [2.2. Create MQ Queue for the consumer.](#Setup_MQ)
-- [3. Create API to publish message to topic and event flow to consume topics.](#Setup_API)
-  * [3.1. Create API to publish message to Kafka topic.](#Create_API)
-	* [3.2. Create Event-driven flow to consume Kafka messages.](#Create_Consumer)
-- [4. Testing the Kafka flows](#test_designer_flow)
-- [5. Deploying Your Designer Flow to App Connect Dashboard  ](#deploy_a_designer_flow)
-    
----
+**Event Endpoint Management** provides the capability to describe and catalog your Kafka topics as event sources, and to share the details of the topics with application developers within the organization. Application developers can discover the event source and configure their applications to subscribe to the stream of events, providing self-service access to the message content from the event stream.
 
-# 1. Introduction <a name="introduction"></a>
+Access to the event sources are managed by the Event Gateway. The Event Gateway handles the incoming requests from applications to consume from a topic’s stream of events. The Event Gateway is independent of your Kafka clusters, making access control to topics possible without requiring any changes to your Kafka cluster configuration.
 
-React to events in real time to deliver responsive and personalized experiences for applications and customer experience.  Built on open source Apache Kafka, IBM Event Streams is an event-streaming platform that helps you build smart applications that can react to events as they happen.
+1. A quick review of Event Endpoint Management home page.  The EEM administrator will manage the **Topics, Clusters, and Event gateways**
+Also will published the topics that will be visible to developers 
 
-* The purpose of this LAB is to show how to publish messages on to the Kafka broker to be consumed by other applications that are listening to a topic.  We will create a simple API that will create messages and then publish them to our topic.  We will also then create an event driven flow that will be listening to the topic and will put the message on to a MQ queue.
+    ![](images/media/image1b.png)
 
-If you need to review logging in to the Platform Navigator review the steps in the [Return to main lab page](../../../index.md#lab-sections)
 
-1\. From your home page in the upper left it will show your login name and you can always click on **IBM Automation** to get to this home page.   
-* For this lab we will be using **App Connect Designer**, under Integration Messaging we will use **MQ**, and under Event Streaming we will use **es-demo** for our Kafka broker.  
+1. Login to the EEM home page as **eem-user**
 
-![alt text][pic2]
+    ![](images/media/image1a.png)
 
-2\. You can right click on each of these capabilities and open them in a new tab.  
-You wil then have a tab open for each of them to help save time.  
+1. Go to the **Event Endpoint Management** catalog home page and find the **ORDERS.NEW** topic.
 
-![alt text][pic3]
+    ![](images/media/image1.png)
 
-# 2. Create the Kafka topic and MQ Queue for this lab.<a name="Setup_connections"></a>
-# 2.1 Create the Kafka topic<a name="Setup_kafka"></a>
+1. Click into the topic to review the information about the events that are available here.
+Look at the schema to see the properties in the order events. You can see the sample message to get an idea of what to expect from events on this topic.
 
-1\. Now go to the tab for **es-demo** or you can click on the link from the home page and this will take you to the IBM Event Streams home page.   
+    You will also see the Servers available this will be used in the Event Processing.
 
-![alt text][es1]
+    ![](images/media/image3.png)
 
-2\. Now we will create our topic. Click on the **Create a topic** tile. 
+    **NOTE**: Keep this page open. It is helpful to have the catalog available while you work on your event processing flows, as it allows you to refer to the documentation about the events as you work. Do the following steps in a separate browser window or tab.
+# 1.2 Event Automation Processing
 
-![alt text][es2]
+1. Go to the **Event Automation Processing** home page.
+The next step is to start processing this stream of events, to create a custom subset that contains the events that you are interested in.
 
-3\. Now enter the name of your topic.  Since this is a shared Kafka broker, use your userid as part of the topic name.  In this example, we are logged in as chopper1 so the topic name is **chopper1.mytopic**.  Click **Next**.
+    ![](images/media/image4.png)
 
-![alt text][es3]
+1. Create a flow, and give it a name and description to explain that you will use it to identify orders made in the EMEA region.
 
-4\. Leave the partitions at 1 and click **Next**.
+    Name your Flow "EP-<Student Name>" for example **EP-melch1**
 
-![alt text][es4]
+     And add a Description (ex: POT Event processing lab)
 
-5\. Since this is for a lab, change the Message retention to **A day** and click **Next**.
-**Note:** If we wanted to retain message longer we could change this to meet those needs.
+     Click **Create**
 
-![alt text][es5]
+    ![](images/media/image5.png)
 
-6\. For the Replicas, we will change the **Minimum in-sync replicas** to **1** and select **Replication factor:1**.  Note:  Make sure that the radial button next to Replication factor:1 is selected before clicking **Create topic**.
+    The next step is to bring the stream of events you discovered in the catalog into Event Processing.
 
-![alt text][es6]
+1. You will know be on the canvas. Create an event source node by dragging one onto the canvas. You can find this in the "Events" section of the left panel.
+To configure the event source node hover over the node and select the **pen icon**.
 
-7\. Now you will be back on the Topics screen.  You may see other users topics in the list but make sure you see your topic you just created.  
+    ![](images/media/image7.png)
 
-# 2.2 Create MQ Queue for the consumer<a name="Setup_MQ"></a>
+1. Configure the new event source. Make sure to use the **Add event source**.  You may see others that were recently created. 
 
-1\.Now go to the tab for **MQ Console** 
+    ![](images/media/image10.png)
 
-![alt text][pic3]
+1. Give the node a name that describes this stream of events: **Order_source_cody1**
+We need to get the server address from Event Endpoint Management
 
-Or you can click on the link from the home page and this will take you to the IBM MQ Console home page.   
+    **NOTE:** You will not need to **Generate access credentials** those will be provided for you.  
 
-![alt text][mq1]
+    ![](images/media/image10a.png)
 
-2\. Now click on your Queue Manger tile.  
+1. Now go back to the Event Endpoint Management home page (should be open in another tab).
+Here we will copy the Server that we need to complete the Source Connector. 
 
-![alt text][mq2]
+    ![](images/media/image10d.png)
 
-3\. The name of your Queue Manager will be MQGR**X** where **X** = the number of your userid.  In this example we are using chopper1.  Save this for later use.   
-We will be creating a new local Queue for this lab.   Click on **Create**
+1. Now return to the **Event Processing** to finish configuring the event source for our flow.
+Paste the url in the server and click **Next**
 
-![alt text][mq3]
+    ![](images/media/image10a.png)
 
-4\. Click on the local Queue tile.  
+1. Now we will accept the certificates.  
+Click the **Accept certificate** box and click **Next**
 
-![alt text][mq4]
+    ![](images/media/image11.png)
 
-5\. Now enter the Queue name.  In the example we used **DEMO.MYTOPIC.EVENT** then click **Create**.  
+    **NOTE:**: If the credentials are not accepted immediately, wait for
+    thirty seconds, and then click "Next" again.
 
-![alt text][mq5]
+1. Now we will add the username and password provided to you for the **ORDERS.NEW** topic.  
 
-6\. We now have your Queue defined.   Click on the **IBM Automation** on the upper left to go back to the homepage. 
+    Click **Next**
 
-![alt text][mq6]
+    ![](images/media/image11a.png)
 
-[pic0]: images/0.png
-[pic1]: images/1.png
-[pic2]: images/2.png
-[pic3]: images/3.png
-[es1]: images/es1.png
-[es2]: images/es2.png
-[es3]: images/es3.png
-[es4]: images/es4.png
-[es5]: images/es5.png
-[es6]: images/es6.png
-[mq1]: images/mq1.png
-[mq2]: images/mq2.png
-[mq3]: images/mq3.png
-[mq4]: images/mq4.png
-[mq5]: images/mq5.png
-[mq6]: images/mq6.png
-
-# 3. Create API to publish message to topic and event flow to consume topics.<a name="Setup_API"></a>
-
-In this section, we will create a simple API that will create messages and then publish them to our topic.  We will also then create an event driven flow that will be listening to the topic and will put the message on to a MQ queue.
-
-**Note:** We are just building the one flow to put the events to a queue but you could also build additional flows for other business units to react to the same message and send email, Slack, etc. 
-
-# 3.1 Create API to publish message to Kafka topic<a name="Create_API"></a>
-
-1\.Now go to the tab for **IBM Automation** 
-
-![alt text][pic3]
-
-Or you can click on the link from the home page and this will take you to the IBM ACE Designer page.   
-
-![alt text][des1]
-
-2\. You should be on the App Connect Designer home page.   On the left menu select the Dashboard icon.  Once on the Dashboard page on the right side select *New** and click on **Flows for an API**.  
-
-![alt text][des2]
-
-3\. First thing we will do is create the model for this.  We will call the model **KafkaProducer**
-
-![alt text][des3]
-
-4\. For this example, we will map the following properties these will all be data type String except for amount we will change that to number. 
-
-**Note:** The "Add property +" is used to add additional property fields. 
-
-1. id
-2. name
-3. amount
-4. description
-
-When done click on the **Operations tab.**
-
-![alt text][des4]
-
-5\. We will now select the operation we will build for this API.  
-Click on the drop down to add an operation. 
-
-![alt text][des5]
-
-6\. We will use the Create operation for this.  Click on that.
-
-![alt text][des6]
-
-7\. We now have the POST operation ready and will implement our flow.   Click on the **Implement Flow** button.  This will take us to the flow designer.  
-
-![alt text][des7]
-
-8\. Now click on the blue **+** and enter **Kafka** on the search line or scroll down to the **Kafka connector**.  Select the **Send message**. 
-
-![alt text][des8]
-
-9\.If you already have a connection you can skip to **Step 12**
-If not, click on **Connect**.
-
-![alt text][des9]
-
-10\. For the Authorization method, make sure to select **\(SASL_SSL\)** from the dropdown.  Click **Continue**. 
-
-![alt text][des10]
-
-11\. Now fill in the fields.  We will use the SCRAM credentials we saved earlier in the **Kafka Pre-Req**. 
-<br>[Return to main lab page and goto the **Create Connection to shared Kafka cluster**](../../../index.md#lab-sections)
-  
-* a\. Kafka broker list: bootstrap URL of the cluster
-* b\. username: SCRAM username 
-* c\. password: SCRAM password 
-
-* For the Security mechaniam: make sure to select the **512**
-* Open the es-cert.pem file we downloaded.  Copy the whole thing and paste in the CA certiticate.  Scroll to the bottom and Click **Connect**.
-
-![alt text][des11]
-
-12\. Now select the topic for your userid that you created in the last section.  For the payload, we will fill it in with the mapping the input to the API.  
-
-![alt text][des12]
-
-13\. We will complete the API by updating the Reponse.  Click on the Reponse.
-We will map the Kafka Offset to the id in the reponse of the API.  
-When done click on the **Done** button in the upper right.  
-
-![alt text][des13]
-
-[des1]: images/des1.png
-[des2]: images/des2.png
-[des3]: images/des3.png
-[des4]: images/des4.png
-[des5]: images/des5.png
-[des6]: images/des6.png
-[des7]: images/des7.png
-[des8]: images/des8.png
-[des9]: images/des9.png
-[des10]: images/des10.png
-[des11]: images/des11.png
-[des12]: images/des12.png
-[des13]: images/des13.png
-
-# 3.2 Create Event-driven flow to consume Kafka messages.<a name="Create_Consumer"></a>
-
-1\. Now go to the App Connect Designer Dashboard by clicking on the left hand menu icon
-
-![alt text][des14]
-
-2\. You will now see the API flow you just created for producing Kafka messages to your topic. 
-Next, we will click on **New** - **Event-driven flow** to create the consumer flow.
-
-![alt text][des15]
-
-3\. Now click on the blue **+** and scroll down to the **Kafka** connector or just start typing in the search field.  Select the **New message**.
-You should already have an Account setup from the last section.   
-
-![alt text][des16]
-
-4\. Now we will see the configuration screen for the Kafka connector. 
- Now select the topic for your userid that you created in the previous section.  For the Group ID, we will use your userid as the unique ID.  In this case, we are using chopper1.
-
- **Note:** Make sure you use your userid for this. 
-
- **Note:** For the **Message offset** you can select the latest which will start to consume messages at that point.   If you select eariler then you will get all messages that had been produced already for the offset.
+1. Now select the Topic we will use. **ORDERS.NEW**
+    ![](images/media/image11b.png)
  
- **Do not leave Message offset blank**
+1. Get the schema for order events from Event Endpoint Management.
 
-![alt text][des17]
+    Click the Copy button in the Schema tab to copy the schema to the clipboard.
+You need to give Event Processing a description of the events
+available from the topic. The information in the schema will enable
+Event Processing to give guidance for creating event processing nodes.
 
-5\. Now click on the blue **+** and scroll down to the **IBM MQ** connector or just start typing in the search field.  Select the **Put message on a queue**. 
+    ![](images/media/image11d.png)
 
-![alt text][des18]
+1.  Click the Yes button and turn it to No for this Lab because we
+have already saved this source topic for you
+Click **Configure** to finalize the event source.
+    ![](images/media/image11e.png)
+### Recap
 
-6\. Select the **Put message on a queue**. If you don't have an Account already setup for your MQ connector **click on Connect**
-If you have a Account already setup skip to **Step XX**
+You created your first event processing flow.
+You have seen how to discover and request access to a topic in the
+catalog, and register it as a source of events for processing.
 
-![alt text][des19]
+# 2.0 Filter events based on particular properties
 
-7\. Now you will fill in the connection details from the MQ-Pre-Lab where you should have saved your **Queue Manager Name** and **Hostname**.
-  
-* Enter the QMgr name
-* For the QMgr host we will use the following format:
+When processing events, we can use filter operations to select a subset
+that we want to use. Filtering works on individual events in the stream.
 
-  qmgrxx-ibm-mq.\<userid>.svc
+## Scenario : Identify orders from a specific region                                       
 
-  xx = userid number
-* Port is 1414
-* Channel SYSTEM.DEF.SVRCONN
+The EMEA operations team wants to move away from reviewing quarterly sales reports and be able to review orders in their region as they occur.                                       Identifying large orders as they occur will help the team identify changes that are needed in sales forecasts much earlier. These results can also be fed back into their manufacturing cycle so they can better respond to demand.                                      
 
-Click **Connect**
+## Define the filter
 
-![alt text][des20]
-
-7\. Click **Continue**
-
-![alt text][des21]
-
-8\. Now we will complete the mapping for our MQ connector.  
-
-1. Queue name:      DEMO.MYTOPIC.EVENT
-2. Message type:    TEXT 
-3. Message payload: If you click in the box the suggested mapping is displayed.  Select the **Payload**. 
-
-We will also give the flow a meaningful name.   In this example we can use **Consume Kafka messages**.  
-When done click on the **Dashboard** in the upper left corner. 
-
-![alt text][des22]
-
-9\. Now from the Dashboard we see our two flows we created.  Now continue to the next section to test the flows.   
-
-![alt text][des23]
-
-[des14]: images/des14.png
-[des15]: images/des15.png
-[des16]: images/des16.png
-[des17]: images/des17.png
-[des18]: images/des18.png
-[des19]: images/des19.png
-[des20]: images/des20.png
-[des21]: images/des21.png
-[des22]: images/des22.png
-[des23]: images/des23.png
+The next step is to start processing this stream of events, by creating the filter that will select the custom subset with the events that you are interested in.
 
 
-# 4 Testing the Kafka flows <a name="test_designer_flow"></a>
+1. Go to the **Event Processing** home page, search for **Student Name** and click on the "Edit flow" link on the tile for your flow.  
+For example "EP-melch1".                                       
+  ![](images/media/image4a.png)
 
-We will now test the new Kafka flows.   
+1. Create a **Filter** node and link it to your event source.
+Create a filter node by dragging one
+ onto the canvas. You can find this in the "Processors" section of the
+ left panel.  Click and drag from the small gray dot on the event source to the
+matching dot on the filter node.
+Hover over the node and select the pen icon to edit the flow. 
 
-1\. You will now be on your home page and in the upper left it will show your login name and you can always click on **IBM Automation** to get to this home page.   
-* For this lab we are using **App Connect Designer**, under Integration Messaging we will use **MQ**, and under Event Streaming we will use **es-demo** for our Kafka broker.  
+   ![](images/media/image2a.png)
 
-![alt text][pic2]
+    **Note:** You can add a node onto the canvas and automatically
+  connect it to the last node added by  double-clicking it in the
+  palette. 
+ 
+1. Give the filter node a name that    describes the events it
+should identify: EMEA orders
 
-2\. To make testing easier you should right click on each of these capiblities and open them in a new tab.  
-You will then have a tab open for each of them to help save time.  
+    Click **Next**
 
-![alt text][pic3]
+      ![](images/media/image3a.png)
 
-3\. Let's first go to the App Connect Dashboard.  Here you will see your Kafka flows created.  We will start with the **Kafka Producer API** click on the tile to open it. 
+1. Use the assistant to define a filter that matches events with:
 
-![alt text][tst1]
+    *region = EMEA* 
 
-4\. Now in the upper right corner we will click on the switch to start the API. 
+    Use the drop down for the property and conditon and type in EMEA.  
+    
+    Click "Add to expression".
 
-![alt text][tst2]
-
-5\. You will now see that the Test button is on the menu.   Click on the **Test Button** and you will see the API test page.   Click on the POST operation.  
-
-![alt text][tst3]
-
-6\. Next we will click on the **Try it** button.  
-
-![alt text][tst4]
-
-7\. Now scroll down the API test page and you can click on **Generate** to populate the body of the API.  This will show all the fields for the API call.  You can change the fields if you like as in this example.
-Click **Send** button. 
-
-YOu will then see the API Request and the Reponse to the API call.   We have just produced a kafka message and the offset is 5 which is returned in the API call. 
-
-![alt text][tst5]
-
-8\. Now let's go to the Event Streams tab and click on the left menu to open the topics.  You should see your topic that you created in the first section of this lab.  In this example it is chopper1.mytopic. 
-
-![alt text][tst6]
-
-9\. Click on your topic to open your topic.  On your topic page click on the Message button and this will show the message you just created. 
-
-![alt text][tst7]
-
-You can click on the message to open it and see the content. 
-
-![alt text][tst7a]
-
-10\. Now let's go to the MQ Console tab and click on your Queue Manager title, in this example it is MQGR1. 
-You will see that your queue should show zero messages.  This is since we didn't start the consumer flow yet to put the kafka messages to the queue.  
-
-![alt text][tst8]
-
-11\. Now let's go back to the to the  App Connect Dashboard.  You will see that the Consumer flow is not running.  Click on the 3 dots of the tile and select start to start the flow.   
-
-![alt text][tst9]
-
-12\. You now should see the consumer flow Running. 
-
-![alt text][tst10]
-
-13\. Now let's go back to the MQ Console tab and click on your Queue Manager title, in this example it is MQGR1. 
-Click on the Refresh Icon and you should see a message on your queue now.  **Note** This is due to Kafka broker keeping the messages available so when applications start up they can go back and pick up messages that have already been produced.   
-
-![alt text][tst11]
-
-14\.You can click on the queue to view the message and the data. 
-
-![alt text][tst12]
-
-[tst1]: images/tst1.png
-[tst2]: images/tst2.png
-[tst3]: images/tst3.png
-[tst4]: images/tst4.png
-[tst5]: images/tst5.png
-[tst6]: images/tst6.png
-[tst7]: images/tst7.png
-[tst7a]: images/tst7a.png
-[tst8]: images/tst8.png
-[tst9]: images/tst9.png
-[tst10]: images/tst10.png
-[tst11]: images/tst11.png
-[tst12]: images/tst12.png
+      ![](images/media/image5a.png)
 
 
-## Summary
-You can go back and produce more messages using the API flow and stop and start the consumer flow as well. 
+## Testing the flow
 
-# 5. Deploying Your Designer Flow to App Connect Dashboard <a name="deploy_a_designer_flow"></a>
+ The final step is to run your event processing flow and view the results.
 
-As in other labs, we can export our Designer flow as a bar file and deploy to App Connect Dashboard on Cloud Pak for Integration. We will not do that in this lab.   
+1. Use the "Run" menu, and select **Include historical** to run your
+filter on the history of order events available on this Kafka topic.
 
+   ![](images/media/image6a.png)
+ 
+    **NOTE:** "Include historical" is useful while you are developing your flows, as it means that you don't need to wait for new events to be produced to the Kafka topic. You can use all of the events already on the topic to check that your flow is working the way that you want.
 
-[Return to main lab page](../index.md)
+1. Click the EMEA orders node to see a live view of results from your filter. It is updated as new events are emitted onto the orders topic.
+**Note:** You may see the message "Waiting for receiving the events"
+
+   ![](images/media/image6b.png)
+
+    You will see only messages from Region EMEA.
+
+   ![](images/media/image6c.png)
+
+1. When you have finished reviewing the results, you can stop this flow.
+
+   ![](images/media/image6d.png)
+## Recap
+
+ You used a filter node to specify a subset of events on the topic that you are interested in.
+ 
+[Return to main Event processing lab page](../index.md)

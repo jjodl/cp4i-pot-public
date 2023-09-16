@@ -10,7 +10,7 @@ AsyncApi's helps you to socialize the Kafka sources (Topics) as API's through IB
 
 Architecture Diagram below <br>
 
-![](images/component-diagram.png)
+![](images/component-diagram1.png)
 
 <br>
 
@@ -19,10 +19,8 @@ Architecture Diagram below <br>
 
 |  Subject                            | Description                                            |                                                               
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| [Lab 1](lab1/ReadMe.md)       |In this lab you will, <br>a) Create Kafka Topic in IBM Event Streams<br>b) Create a AsyncAPI in IBM API Connect Management Portal <br>c) Create a Product in IBM API Connect Management Portal<br>d) Publish the Product & AsyncApi to API Connect Developer Portal and IBM Event Gateway. <br>e) Subscribe to the AsyncApi from API Connect Developer Portal. 
+| [Lab 1](lab1/ReadMe.md)       |In this lab you will, <br>a) Review Kafka Topics that are managed in the Event Endpoint Manager<br>b) Select the FLIGHT.LANDINGS topic and export as AsyncAPI for IBM API Connect. Management<br>c) Import the AsyncAPI that you exported from the EEM portal.<br>c) Create a new Product for the AsyncAPI and Publish the Product & AsyncApi to API Connect Developer Portal and IBM Event Gateway. 
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| [Lab 2](lab2/ReadMe.md)       |In this lab you will, <br>a) Use IBM App Connect Toolkit and import Flight Landing Simulator Project Interchange <br>b) Review the Flight landing simulator flow, and modify Topic name, kafka policy's, and bootstrap url <br>c) ReBuild the bar file and deploy the bar file to IBM App Connect Dashboard.
-|-------------------------|------------------------------------------------------------------------------------------------------------|
-| [Lab 3](lab3/ReadMe.md)       |In this lab you will run kafka clients to consume the Flight landing events being produced in lab2.
+| [Lab 2](lab2/ReadMe.md)       |In this lab you will, Subscribe to the AsyncApi from API Connect Developer Portal.  Then you will get code samples from API Connect Developer Portal to use to run kafka clients to consume the Flight landing events being produced to the FLIGHT.LANDINGS topic. 
 
 [Return to Kafka lab page](../index.md#lab-sections)

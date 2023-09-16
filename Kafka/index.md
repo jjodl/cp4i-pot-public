@@ -5,12 +5,12 @@ IBM Event Automation, a fully composable solution, enables businesses to help me
 [Return to main Lab section](../index.md#lab-section)
 
 ## Lab PreReq
-Before starting the **Event Automation labs** make sure that you complete the following pre-req setup. 
+Before starting the **Event Automation labs** make sure that you complete the following prereq setup. 
+
 
 |  Pre-req                            | Description                                         
 |-----------------------------|------------------------------------------------------------------------------------------------------------|
 | [Create Connection to Kafka cluster.](EDA-Pre-lab/kafkasetup/kafka-connect.md)      | Before starting the **Event Automation labs** make sure that you have completed this.  You will follow the steps to create Kafka connection and save credentials and certs for all EDA labs.
-
 
 ## Lab Abstracts
 
@@ -21,6 +21,7 @@ Before starting the **Event Automation labs** make sure that you complete the fo
 | [Event Endpoint Experience](Event_EndPoint/index.md)       | **Integration with AsyncAPI's Event Endpoint Experience**  Show how to create an Async API in **IBM API Connect Manager**, Produce events to IBM Event Streams using IBM App Connect Toolkit Flow, and finally run varies Consumers to read the events 
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | [Event Automation Authoring Experience](Event-Authoring/index.md)       | **Event Automation Experience**  Define business scenarios in an intuitive, easy-to-use authoring canvas. Detect whenever they arise and start acting in real-time when it matters the most.   
-
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+|
 
 [Return to main Lab section](../index.md#lab-section)
