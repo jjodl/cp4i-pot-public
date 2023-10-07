@@ -22,5 +22,7 @@ Architecture Diagram below <br>
 | [Lab 1](lab1/ReadMe.md)       |In this lab you will, <br>a) Review Kafka Topics that are managed in the Event Endpoint Manager<br>b) Select the FLIGHT.LANDINGS topic and export as AsyncAPI for IBM API Connect. Management<br>c) Import the AsyncAPI that you exported from the EEM portal.<br>c) Create a new Product for the AsyncAPI and Publish the Product & AsyncApi to API Connect Developer Portal and IBM Event Gateway. 
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | [Lab 2](lab2/ReadMe.md)       |In this lab you will, Subscribe to the AsyncApi from API Connect Developer Portal.  Then you will get code samples from API Connect Developer Portal to use to run kafka clients to consume the Flight landing events being produced to the FLIGHT.LANDINGS topic. 
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+| [Lab 3](lab3/ReadMe.md)       |In this lab you will, create the Event Gateway Bootstrap certificates and then test consuming Flight Landing Events
 
 [Return to Kafka lab page](../index.md#lab-sections)
