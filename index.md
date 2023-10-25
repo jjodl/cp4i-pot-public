@@ -31,7 +31,7 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 
 This is the **OCP console** and you will use the userid and password provided to you by the instructor. <br>**(Suggest right clicking and opening in new tab in the VDI)**<br>
 jarjar cluster - 
-[https://console-openshift-console.apps.jarjar.coc-ibm.com/](https://console-openshift-console.apps.jarjar.coc-ibm.com/)
+[https://console-openshift-console.apps.jarjar.coc-ibm.com/](https://console-openshift-console.apps.jarjar.coc-ibm.com/)<br>
 kallus cluster - 
 [https://console-openshift-console.apps.kallus.coc-ibm.com/](https://console-openshift-console.apps.kallus.coc-ibm.com/)
 
