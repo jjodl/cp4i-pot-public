@@ -1,0 +1,53 @@
+asyncapi: 2.1.0
+info:
+  description: |-
+    Flight info for all airlines
+  title: FLIGHT.LANDINGS
+  version: 1.0.0
+  x-ibm-summary: |-
+    Flight info for all airlines
+  x-ibm-name: FLIGHT.LANDINGS
+  contact:
+    email: notprovided@email.com
+tags:
+  - name: flight arrivals
+channels:
+  FLIGHT.LANDINGS:
+    bindings:
+      kafka:
+        partitions: 1
+        replicas: 3
+    subscribe:
+      message:
+        examples:
+          - payload: {"timestamp":"2024-04-02T22:28:47.953126","location":"Philadelphia,PA","airport":"PHL","airline":"BritishAirlines","flight":"BA922","terminal":"F","gate":34,"passengers":61}
+        payload: {}
+servers:
+  cluster:
+    url: $(bootstrapServerAddress)
+    protocol: kafka-secure
+    security:
+      - X-IBM-Client-Id: []
+components:
+  securitySchemes:
+    X-IBM-Client-Id:
+      type: plain
+x-ibm-configuration:
+  enforced: true
+  phase: realized
+  assembly:
+    execute:
+      - invoke-kafka:
+          title: invoke-kafka
+          version: 1.0.0
+          bootstrap.servers: $(bootstrapServerAddress)
+          clusterconfigid: 52fde219-0c2e-4cc6-b67d-7234499140b9
+  properties:
+    bootstrapServerAddress:
+      value: handled.by.eem
+  type: asyncapi
+  testable: false
+  x-ibm-eem: 52fde219-0c2e-4cc6-b67d-7234499140b9
+  x-ibm-eem-signature: e4SBjUQIU_uXuCXBpb0R11kdpB_ydLMmkckEJv9qH_M
+  cors:
+    enabled: false

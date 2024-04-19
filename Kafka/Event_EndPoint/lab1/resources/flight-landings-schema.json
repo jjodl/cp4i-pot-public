@@ -1,0 +1,15 @@
+{
+   "type" : "record",
+   "namespace" : "flightlandings",
+   "name" : "flightlandings",
+   "fields" : [
+      { "name" : "timestamp" , "type" : "string" },
+      { "name" : "location" , "type" : "string" },
+      { "name" : "airport" , "type" : "string" },
+      { "name" : "airline" , "type" : "string" },
+      { "name" : "flight" , "type" : "string" },
+      { "name" : "terminal" , "type" : "string" },
+      { "name" : "gate" , "type" : "int" },
+      { "name" : "passengers" , "type" : "int" }
+   ]
+}
