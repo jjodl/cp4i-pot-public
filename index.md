@@ -34,14 +34,14 @@ You will be assigned a student number so make sure you use the cluster for your 
 
 1. **NY Cluster 1 (cfa2) will be for Student1 to Student9** 
 
-    [Platform Navigator URL](cp4i-navigator-pn-cp4i.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
+    [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
     [OpenShift Cluster URL](https://console-openshift-console.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
     [Event EndPoint Management URL](https://my-eem-manager-ibm-eem-manager-event-automation.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
     [Event Processing URL](https://my-ep-ibm-ep-rt-event-automation.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
 
 1. **NY Cluster 2 (6593) will be for Student11 to Student20** 
 
-    [Platform Navigator URL](cp4i-navigator-pn-cp4i.apps.6601dfa41dd2e4001ef36593.cloud.techzone.ibm.com)<br>
+    [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.6601dfa41dd2e4001ef36593.cloud.techzone.ibm.com)<br>
     [OpenShift Cluster URL](https://console-openshift-console.apps.6601dfa41dd2e4001ef36593.cloud.techzone.ibm.com)<br>
     [Event EndPoint Management URL](https://my-eem-manager-ibm-eem-manager-event-automation.apps.6601dfa41dd2e4001ef36593.cloud.techzone.ibm.com)<br>
     [Event Processing URL](https://my-ep-ibm-ep-rt-event-automation.apps.6601dfa41dd2e4001ef36593.cloud.techzone.ibm.com)<br>
