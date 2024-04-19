@@ -1,0 +1,23 @@
+2023-07-06 15:00:52,386 23 INFO Events Gateway - [start:262] Bootstrap starting.
+2023-07-06 15:00:52,427 23 INFO com.ibm.ei.core.config.DynamicGatewayConfigStore - [lambda$getConfigurationForPath$9:78] No external configuration file found (Path provided: /gatewayConfig.json ). Using default configuration.
+2023-07-06 15:00:52,488 23 INFO com.ibm.ei.bootstrap.BootstrapService (Bootstrap) - [startVerticlesByFeature:102] Enabling the following features : [core, StreamProcServer]
+2023-07-06 15:00:52,503 26 INFO Events Gateway - [start:262] Health Endpoint starting.
+2023-07-06 15:00:53,932 26 INFO com.ibm.ei.core.HealthEndpoint (Health Endpoint) - [lambda$startServer$7:116] Server HealthEndpoint listening on port 8081, SSL enabled = false.
+2023-07-06 15:00:53,936 26 INFO Events Gateway - [lambda$start$14:276] Health Endpoint started.
+2023-07-06 15:00:53,984 26 INFO Events Gateway - [start:262] User Authentication starting.
+2023-07-06 15:00:53,989 26 INFO Events Gateway - [lambda$start$14:276] User Authentication started.
+2023-07-06 15:00:53,990 26 INFO Events Gateway - [start:262] Authenticated Client Interceptor starting.
+2023-07-06 15:00:53,992 26 INFO Events Gateway - [lambda$start$14:276] Authenticated Client Interceptor started.
+2023-07-06 15:00:53,992 26 INFO Events Gateway - [start:262] BootstrapConsumer starting.
+2023-07-06 15:00:53,994 26 INFO Events Gateway - [lambda$start$14:276] BootstrapConsumer started.
+2023-07-06 15:00:53,996 26 INFO Events Gateway - [start:262] SQLConsumer starting.
+2023-07-06 15:00:53,998 26 INFO Events Gateway - [lambda$start$14:276] SQLConsumer started.
+2023-07-06 15:00:54,00 26 INFO Events Gateway - [start:262] FlinkClusterClientConsumer starting.
+2023-07-06 15:00:54,03 26 INFO Events Gateway - [lambda$start$14:276] FlinkClusterClientConsumer started.
+2023-07-06 15:00:54,25 26 INFO Events Gateway - [start:262] Kafka Admin Server starting.
+2023-07-06 15:00:54,87 23 INFO Events Gateway - [start:262] Connection Manager starting.
+2023-07-06 15:00:54,91 26 INFO Events Gateway - [lambda$start$14:276] Kafka Admin Server started.
+2023-07-06 15:00:54,91 26 INFO Events Gateway - [start:262] SASL Response Interceptor starting.
+2023-07-06 15:00:54,92 23 INFO Events Gateway - [lambda$start$14:276] Connection Manager started.
+2023-07-06 15:00:54,92 23 INFO Events Gateway - [start:262] Audit Log Writer starting.
+2023-07-06 15:00:54,93 26 INFO Events Gateway - [lambda$start$14:276] SASL Response Interceptor started.
