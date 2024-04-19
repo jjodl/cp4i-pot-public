@@ -1,0 +1,126 @@
+swagger: '2.0'
+host: ace-tk-customerdb-v1-http-cp4i-ace.ocp-dev-e8d7fad266f3d495445c089746d902f0-0000.us-east.containers.appdomain.cloud
+basePath: /customerdb/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+schemes:
+  - http
+info:
+  title: Customer Database
+  description: This is the customer database sample Swagger document included with IBM Integration Bus
+  version: 1.0.0
+definitions:
+  Customer:
+    properties:
+      id:
+        type: integer
+      firstname:
+        type: string
+      lastname:
+        type: string
+      address:
+        type: string
+    required:
+      - firstname
+      - lastname
+      - address
+tags:
+  - name: customers
+    description: Operations on customers in the customer database
+paths:
+  /customers:
+    post:
+      operationId: addCustomer
+      summary: Add a customer to the database
+      parameters:
+        - name: body
+          in: body
+          description: The customer to add to the database
+          required: true
+          schema:
+            $ref: '#/definitions/Customer'
+      responses:
+        '201':
+          description: If the customer was successfully added to the database
+      tags:
+        - customers
+      description: Add a customer to the database
+    get:
+      operationId: getAllCustomers
+      summary: Get all customers from the database
+      parameters:
+        - name: max
+          in: query
+          description: Maximum number of customers to get from the database
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: An array of customers from the database
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Customer'
+      tags:
+        - customers
+      description: Get all customers
+  /customers/{customerId}:
+    get:
+      operationId: getCustomer
+      summary: Get a specified customer from the database
+      parameters:
+        - name: customerId
+          in: path
+          description: The ID of the customer to get from the database
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: The specified customer from the database
+          schema:
+            $ref: '#/definitions/Customer'
+      tags:
+        - customers
+      description: get a customer
+    delete:
+      operationId: deleteCustomer
+      summary: Delete a specified customer from the database
+      parameters:
+        - name: customerId
+          in: path
+          description: The ID of the customer to delete from the database
+          required: true
+          type: integer
+        - name: Authorization
+          in: header
+          type: boolean
+          required: false
+      responses:
+        '204':
+          description: If the customer was successfully deleted from the database
+      tags:
+        - customers
+      description: delete a customer
+    put:
+      operationId: updateCustomer
+      summary: Update a customer in the database
+      parameters:
+        - name: customerId
+          in: path
+          description: The ID of the customer to update in the database
+          required: true
+          type: integer
+        - name: body
+          in: body
+          description: The customer to update in the database
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: If the customer was successfully updated in the database
+      tags:
+        - customers
+      description: update a customer

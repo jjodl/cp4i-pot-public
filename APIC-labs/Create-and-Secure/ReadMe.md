@@ -42,27 +42,34 @@ In this tutorial, you will explore the following key capabilities:
 
 -   Publish an API for developers
 
+![alt text](./images/apic-lab1-component-diagram.png)
+![alt text](image.png)
+
+
 # 2. Deploying the REST Services <a name="deploy"></a>
 
 First, you will deploy a Customer Database REST service and then you will download the OpenAPI file for the Customer Database REST service that you deployed.
 
-1\. In a browser, enter the URL for the Platform Navigator that is provided by your instructor.
+1\. In a browser, enter the URL for the Platform Navigator URL that is provided by your instructor.
 
+<!--
 Before beginning this lab, you will want to make sure that you have completed the [API Connect Experience Prereq instructions](../APIC-prereq/index.md).
 
 2\. When you log in for the first time, you may see a **Welcome, let's get started** window.  Feel free to review the contents by click **Start the tour** or by click on the **X** to close the window.
 
 ![alt text][pic91]
+-->
+
+2\. Filter instances by the student(number). You will see your instances.(br)
 
 3\. Navigate to the **App Connect Dashboard**.
-
 ![alt text][pic92]
 
 4\. Click on the **Dashboard** icon in the left navigation.
 
 ![alt text][pic93]
 
-5\. For this lab, we already have the REST service built and available as a **bar** file. You can download the **CustomerDatabaseV1.bar** file for the service [here](./resources/CustomerDatabaseV1.bar).
+5\. For this lab, we already have the REST service built and available as a **bar** file. You can download the **CustomerDatabaseV1.bar** file for the service [<u>**here**</u>](./resources/CustomerDatabaseV1.bar).
 
 6\. Click on **Deploy integrations**.
 
@@ -100,7 +107,7 @@ Before beginning this lab, you will want to make sure that you have completed th
 
 ![alt text][pic102]
 
-15\. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document**.
+15\. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document As JSON (or) Download OpenAPI Document As YAML**. Either format can be used to import in API Connect.<br>
 
 ![alt text][pic103]
 
@@ -157,11 +164,15 @@ Before beginning this lab, you will want to make sure that you have completed th
 
 ![alt text][pic13]
 
-9\. Make sure that the **Activate API** <span style="color: red">is not</span> selected and click **Next**. 
+<!--
+9\. 
+
+Make sure that the **Activate API** <span style="color: red">is not</span> selected and click **Next**. 
 
 ![alt text][pic14]
+-->
 
-10\.  The API should be imported successfully as shown in the image below.  Click **Edit API**.
+9\.  The API should be imported successfully as shown in the image below.  Click **Edit API**.
 
 ![alt text][pic15]
     

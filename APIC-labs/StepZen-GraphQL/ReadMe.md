@@ -51,7 +51,7 @@ In this lab, we will leverage an existing REST API to create StepZen GraphQL Pro
 
 In this section, you will deploy a pre-built App Connect Toolkit Rest API that retrieves Account records from Salesforce.
 
-## 2a. Deploy a Toolkit API <a name"toolkit_api></a>
+## 2a. Deploy a Toolkit API
 
 1\. If you are not already logged into the Platform Navigator, enter the URL for the Platform Navigator that was provided by your instructor.  To navigate to the main page of the Platform Navigator, click on **IBM Cloud Pak** in the upper left.
 
@@ -61,7 +61,9 @@ In this section, you will deploy a pre-built App Connect Toolkit Rest API that r
 
 ![](images/cp4i-acedashboard.png)
 
-3\. For this lab, we already have the REST service built and available as a **bar** file. You can download the **SF&#95;ACCOUNT&#95;API.bar** file for the service [here](./resources/SF_ACCOUNT_API.bar).
+3\. For this lab, we already have the REST service built and available as a **bar** file. 
+
+  You can download the [**SF&#95;ACCOUNT&#95;API.bar file for the service here**](./resources/SF_ACCOUNT_API.bar). 
 
 4\. Click on **Deploy integrations**.  
 
@@ -355,7 +357,7 @@ With the cursor at the **:**, enter **getAccounts**.
 
 ![](images/vi-getaccounts-escape.png)
 
-9\. Next, we need to remove the **Attributes** and **BillingAddress** types as they are duplicate segments under curl and curl-01. If you are not familiar with vi, follow the steps below.  If you are familiar with vi, skip to Step #10 once you have removed the Attributes and BillingAddress types.
+9\. Next, we need to remove the **Attributes** types as they are duplicate segments under curl and curl-01. If you are not familiar with vi, follow the steps below.  If you are familiar with vi, skip to Step #10 once you have removed the Attributes type.
 
 ![](images/vi-getaccounts-rootentry.png)
  
@@ -363,7 +365,7 @@ If you are not familiar with vi, enter **gg** to jump to the first line of the f
 
 ![](images/vi-getaccounts-first.png)
 
-To delete a line, position your cursor at the beginning of the line and enter **dd**.  Do this for each line of the **Attributes** type and the **BillingAddress** type.
+To delete a line, position your cursor at the beginning of the line and enter **dd**.  Do this for each line of the **Attributes** type.
 
 **Attributes**:
 
@@ -373,7 +375,7 @@ type Attributes {
   url: String
 }
 ```
-
+<!--
 **BillingAddress**:
 
 ```
@@ -401,6 +403,7 @@ type BillingAddress {
 The file should now begin with **RootEntry**.
 
 ![](images/vi-getaccounts-rootentry.png)
+-->
 
 10\. Save and quit by entering **:wq**.
 

@@ -86,7 +86,8 @@ URL.
 
 ![alt text][pic11]
 
-5\. Enter **App Registry** for the **Title**, **https://httpbin.org/basic-auth/studentx/password** for the **Url**, and **App Registry** for the **Display name**.  Click **Save**.
+5\. Enter **App Registry** for the **Title**, **https://httpbin.org/basic-auth/student(n)/passw0rd** for the **Url**, and **App Registry** for the **Display name**.  Click **Save**.<br>
+Note: Make sure to replace student(n) with your student number. Example student1 <br>
 
 ![alt text][pic12]
 
@@ -510,11 +511,19 @@ In this section, you will test the new version of the API to ensure that OAuth i
 
 ![alt text][pic81]
 
-17\. Confirm that your application is shown in the **API Key** and enter your application secret for the **API Secret**.
+17\. **SKIP THIS STEP. Get Token ISN'T WORKING, FIX IS SCHEDULED FOR THE NEXT RELEASE. FOR NOW, WE WILL TEST USING CURL instead.** <br>
+
+Confirm that your application is shown in the **API Key** and enter your application secret for the **API Secret**.
 
 ![alt text][pic88]
 
-18\. In the **Username** field, enter **studentx**.  In the **Password** field, enter **password**.  Select **customer** for the **Scopes**.
+18\. <br>
+** Copy the GET /customers URL and save to Scratchpad or Notepad. ** <br>
+** Copy the "token url" and save to Scratchpad or notepad.**
+
+
+**SKIP TO NEXT STEP.** <br>
+In the **Username** field, enter **studentx**.  In the **Password** field, enter **password**.  Select **customer** for the **Scopes**.
 
 Recall that when we configured the OAuth API, we provided an Authentication URL as the method for validating the user credentials.
 
@@ -522,17 +531,46 @@ Click **Get Token**.
 
 ![alt text][pic89]
 
-19\. The API Portal will call out to the OAuth Token URL with your client credentials and user credentials.  The OAuth API will intercept the request, validate the credentials, and generate a token. 
+19\. **SKIP THIS STEP** <br>
+The API Portal will call out to the OAuth Token URL with your client credentials and user credentials.  The OAuth API will intercept the request, validate the credentials, and generate a token. 
 
 ![alt text][pic92] 
 
-20\. Click **Send** to invoke the API. The request will include the OAuth bearer token in the Authorization header.
+20\. **SKIP THIS STEP** <br>
+Click **Send** to invoke the API. The request will include the OAuth bearer token in the Authorization header.
 
 ![alt text][pic93]
 
-21\. Scroll down to see the call results.
+21\. **SKIP THIS STEP** <br>
+Scroll down to see the call results.
 
 ![alt text][pic94]
+
+21a\. Get Token using CURL command <br>
+<br>
+Open a Terminal or Command Line window.<br>
+
+**Get Bearer Token:** <br>
+Run the curl command below. <br>
+```
+curl -k -X POST -d "grant_type=password&client_id=REPLACE_WITH_YOUR_CLIENT_ID&client_secret=REPLACE_WITH_YOUR_CLIENT_SECRET&username=student(n))&password=passw0rd&scope=customer" REPLACE_WITH_YOUR_TOKEN_URL 
+```
+<br>
+EXAMPLE TOKEN URL: https://apim-demo-gw-gateway-cp4i-apic.apps.65f99e15920665001e3bcf85.cloud.techzone.ibm.com/student20-porg/sandbox/student20-oauth/oauth2/token
+<br>
+Output should look like below: <br>
+
+![alt text](./images/curl-get-token.png)
+
+Now run the "GET /customers" method as below. <br>
+
+```
+curl -k -H "Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN_FROM_ABOVE" REPLACE_WITH_GET_CUSTOMERS_URL <br> <br>
+Example URL: https://apim-demo-gw-gateway-cp4i-apic.apps.65f99e15920665001e3bcf85.cloud.techzone.ibm.com/student20-porg/sandbox/customerdb/v1/customers | jq
+```
+<br>
+You should see bunch of customers in json format.<br>
+
 
 22\. Feel free to test the rest of the operations.  Testing will be similar to the testing that was completed in the "Create and Secure an API to Proxy an Existing REST Web Service" lab.
 

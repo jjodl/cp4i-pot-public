@@ -47,11 +47,11 @@ A Developer Portal for the Sandbox catalog has already been configured in this e
 
 ## 2a. Login to the API Connect Developer Portal <a name="portal_login"></a>
 
-1\. If you are not already logged into the Platform Navigator, enter the URL for the Platform Navigator that was provided by your instructor.  To navigate to the main page of the Platform Navigator, click on **IBM Cloud Pak** in the upper left.
-
-![alt text][pic104]
+1\. If you are not already logged into the Platform Navigator, enter the URL for the Platform Navigator that was provided by your instructor. 
 
 2\. Navigate to the API Connect instance.
+
+Type apim-demo in the Filter/Search box <br>
 
 ![alt text][pic6a]
 
@@ -88,9 +88,16 @@ A Portal Administrator can customize the look and feel to their organizational s
 
 8\. Some Products are visible to all users without an account depending on the Product visibility setting. Additional options are available when you log into the Developer Portal.
 
-=================================================================================================
+**============================================================================**
 
-**NOTE:** In this Proof of Technology, you created a Consumer account and Consumer Organization in the [API Connect Experience Prereq instructions](../APIC-prereq/index.md).  If using the pre-defined Consumer account, go to [**Step 11**](#step11) to log into the Developer Portal with your assigned username and password.  
+**NOTE:
+Sign in to the developer portal as student(n)dev, and password is passw0rd.<br>
+SKIP STEPS 9 through 11.**
+
+**============================================================================**
+
+
+**NOTE:** In this Proof of Technology, you can create a Consumer account of your own Consumer Organization in the [API Connect Experience Prereq instructions](../APIC-prereq/index.md).  If using the pre-defined Consumer account, go to [**Step 11**](#step11) to log into the Developer Portal with your assigned username and password.  
 
 If you would like to create your own account to access the Portal, follow the steps below.
 
@@ -111,10 +118,12 @@ Next fill out the form and an activation email will be sent to you.  Click **Sig
 11\.<a name="step11"></a> You can log into the Developer Portal using the pre-defined Consumer account or the Consumer account that you just created.  Click on **Sign in** on the Dev Portal screen in the upper right corner.  
 
 ![alt text][pic19a]
+![alt text](image.png)
 
-12\. The Sign in screen will pop up and you will log in with your Consumer username and password.  If using the Consumer account that you pre-defined, the name will be based on your cluster account.  In the screenshot below, the cody cluster is being used and the user is cody2.  Therefore, the Consumer account username will be cody2dev.  The password that was suggested in the prereq was **passw0rd**.  If you are using the Consumer account that you just created, you can log in with those credentials.  Click **Sign in**. 
+12\. The Sign in screen will pop up and you will log in with your Consumer username and password. Login as **student(n)dev** and password **passw0rd**.
 
 ![alt text][pic20a]
+
 
 13\. Once logged in, you will see the Welcome page for the portal.   Continue to the next section to register you test application. 
 
