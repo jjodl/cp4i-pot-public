@@ -22,7 +22,6 @@ In an event-driven flow you identify an event that can occur in your source appl
 * The purpose of this LAB is to show how to create an event-driven flow to identify when new Salesforce Account Records are created. 
 
 ![alt text](./images/component-diagram.png)
-![alt text](image.png)
 
 
 # 2. Setup connection to Smart connectors for this lab.<a name="Setup_connections"></a>
@@ -93,10 +92,10 @@ Salesforce New Account Events.
 
 ![alt text][pic13]
 
+<!--
 8\. Now return to the tab where you have the MQ console opened.  Click on manged and you should see your new Queue.  It should be showing 0/5000 which means it has no messages and can handle 5000 messages. 
 * This is where we will check when we test this flow. 
-
-![alt text][pic14aa]
+->
 
 
 [pic0]: images/0.png
@@ -146,8 +145,9 @@ Salesforce New Account Events.
 **Note:** This is a shared login so others will be using this as well so try and use names that are unique to you or the Account you were assigned.   
 You will use the Userid and Password provide for this lab.
 
+<!--
 ![alt text][pic22b]
-
+-->
 
 2\. In the left menu seach for Accounts and select that.   
 

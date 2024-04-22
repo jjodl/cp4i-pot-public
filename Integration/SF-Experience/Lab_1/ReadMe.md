@@ -13,7 +13,7 @@
   * [2a Testing the API flow](#testing_the_API_flow)
   * [2b Add an Additional Operation for our Salesforce API](#add_an_additional_operation_for_our_salesforce_API)
   * [2c Testing the New API Operation](#testing_the_new_API)
-- [3. Deploying Your Designer Flow to App Connect Dashboard](deploying_your_designer_flow_to_app_connect_dashboard)
+- [3. Deploying Your Designer Flow to App Connect Dashboard](#deploying_your_designer_flow_to_app_connect_dashboard)
     
 ---
 

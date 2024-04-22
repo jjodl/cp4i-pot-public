@@ -138,7 +138,8 @@ Click **Next**.
 
 ![](images/ace-getaccounts-results.png)
 
-7\. Copy and past into a text editor one of the **Id** values from the output (e.g., 0014100000D0bbQAAR).  **Note:** You will want to make sure that you capture an Id that has the BillingStreet, BillingCity, BillingState, BillingPostalCode, and BillingCountry populated with a value other than null.  You will use this Id to test getAccount operation.
+7\. Copy and past into a text editor one of the **Id** values from the output (e.g., 0014100000D0bbQAAR).  <br>
+**NOTE IMPORTANT:** You will want to make sure that you capture an Id that has the **<u>BillingStreet, BillingCity, BillingState, BillingPostalCode, and BillingCountry</u>** populated with a value other than null.  You will use this Id to test getAccount operation.
 
 ![](images/ace-getaccounts-id.png)
 
@@ -263,7 +264,7 @@ Replace **\<REPLACE-WITH-GETACCOUNT-URL\>** with the URL that you copied in Sect
 
 ![](images/stepzen-import-getaccount.png)
 
-5\. Enter **api/salesforce-account-api** when prompted for what you want your endpoint to be called.
+5\. Enter **api/student(n)-salesforce-account-api** when prompted for what you want your endpoint to be called. Make sure to replace the student number (n) with your number.<br>
 
 ![](images/stepzen-terminal-getaccount-endpoint.png)
 
@@ -375,7 +376,7 @@ type Attributes {
   url: String
 }
 ```
-<!--
+
 **BillingAddress**:
 
 ```
@@ -403,7 +404,7 @@ type BillingAddress {
 The file should now begin with **RootEntry**.
 
 ![](images/vi-getaccounts-rootentry.png)
--->
+
 
 10\. Save and quit by entering **:wq**.
 
@@ -789,6 +790,8 @@ Result:
 
 ![](images/apic-graphql-create-5.png)
 
+
+<!--
 11\. Navigate to the **Gateway** tab.
 
 ![](images/apic-gateway.png)
@@ -800,6 +803,7 @@ Result:
 13\. Deselect the **Compression** flag.
 
 ![](images/apic-graphql-create-6.png)
+-->
 
 14\. Click **Save**.
 

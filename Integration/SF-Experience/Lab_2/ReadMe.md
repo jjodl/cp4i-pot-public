@@ -82,12 +82,13 @@ Go ahead and click Import from existing API Import and  click Next
 Click Next.
 
 ![alt text][pic8]
-
+<!--
 4\. The next screen will ask if you want to activate the API. This will automatically create and expose your api however for this lab we will **NOT** check that box and just click **Next**
 
 ![alt text][pic8a]
+-->
 
-5\. You will see the following summary page that shows the definition was successful generated. Click on **Edit API**
+4\. You will see the following summary page that shows the definition was successful generated. Click on **Edit API**
 This will take you to the designer page and will populate the fields inside APIC with what was able to be pulled from the document we imported.
 
 ![alt text][pic9]
@@ -308,6 +309,7 @@ Now that your product is published let’s view it in the developer portal. This
 4\. Copy and paste the Portal URL into your browser in a new tab.
 
 ![alt text][pic39]
+
 
 5\. The portal is setup for self service so we will create a new account as a developer.
 
