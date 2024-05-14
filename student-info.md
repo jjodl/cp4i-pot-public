@@ -12,10 +12,14 @@
 
 | <b> Other access Info        |
 | :---------------- | 
-|<b>Cluster userid/password:</b> <br> studentX / welcometothepot
-|<b>APIC ConsumerOrg: </b>	studentXdev / passw0rd
-|<b>SF Login for integration lab </b>	potSF@gmail.com / SF-Oct-01
-|<b>StepZen Login </b>	pot57675@gmail.com / API-2024-POT
+| <b>Cluster userid/password:</b> | 
+| studentX / welcometothepot |
+| <b>APIC ConsumerOrg: </b>	|
+| studentXdev / passw0rd |
+| <b>SF Login for integration lab </b>	|
+| potSF@gmail.com / SF-Oct-01
+| <b>StepZen Login </b>	|
+| pot57675@gmail.com / API-2024-POT
 
 | <b> Event Automation common login |  
 | :---------------- |
