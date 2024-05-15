@@ -32,7 +32,7 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 You will be assigned a student number so make sure you use the cluster for your student number. 
 <br>**(Suggest right clicking and opening these in new tab on the VDI)**<br>
 
-1. **NY Cluster 1 (cfa2) will be for Student1 to Student9** 
+1. **NY Cluster 1 (cfa2) will be for Student1 to Student10** 
 
     [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
     [OpenShift Cluster URL](https://console-openshift-console.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
