@@ -25,7 +25,7 @@
 | <b> Other access Info        |
 | :---------------- | 
 | <b>Cluster userid/password:</b> | 
-| studentX / welcometothepot |
+| studentX / welcometotheMay15pot |
 | <b>APIC ConsumerOrg: </b>	|
 | studentXdev / passw0rd |
 | <b>SF Login for integration lab </b>	|
