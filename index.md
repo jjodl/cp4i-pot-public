@@ -28,7 +28,7 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 
 ## Lab section:
 
-**For the POT April 15th and 16th** we will be using the following clusters.
+**For the POT May 15th and 16th** we will be using the following clusters.
 You will be assigned a student number so make sure you use the cluster for your student number. 
 <br>**(Suggest right clicking and opening these in new tab on the VDI)**<br>
 
