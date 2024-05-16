@@ -1,3 +1,5 @@
+https://jjodl.github.io/cp4i-pot-public/student-info
+
 | Student number        | VNC Url | Password | 
 | :---------------- | :------: | ----: |
 | student1 |   http://52.116.101.123/vnc.html | lhhoi5ok |
