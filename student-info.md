@@ -22,8 +22,8 @@
 | student20 |  http://52.116.101.90/vnc.html | 2p4z89wn   |
 | student21 |  http://52.116.101.78/vnc.html | vtfs9hv0   |
 | student22 |  http://52.116.101.125/vnc.html | q7aqfwhd   |
-| student23 |    |     |
-| student24 |    |     |
+| student23 |  http://52.116.101.100/vnc.html | 8gffuig7 |
+| student24 |  http://52.116.101.84/vnc.html  | t7dx51al |
 
 
 | <b> Other access Info        |
