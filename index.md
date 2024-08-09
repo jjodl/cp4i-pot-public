@@ -28,16 +28,23 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 
 ## Lab section:
 
-**For the POT June 26th and 27th** we will be using the following clusters.
+**For the POT August 15th and 16th** we will be using the following clusters.
 You will be assigned a student number so make sure you use the cluster for your student number. 
-<br>**(Suggest right clicking and opening these in new tab on the VDI)**<br>
+<br>**(Suggest right clicking and opening these in new tab on your assigned desktop)**<br>
 
-1. **June Cluster 1 (cfa2) will be for Student1 to Student10** 
+1. **August Cluster 1 (4055) will be for Student1 to Student10** 
 
-    [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
-    [OpenShift Cluster URL](https://console-openshift-console.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
-    [Event EndPoint Management URL](https://my-eem-manager-ibm-eem-manager-event-automation.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
-    [Event Processing URL](https://my-ep-ibm-ep-rt-event-automation.apps.6603654220c982001eb3cfa2.cloud.techzone.ibm.com)<br>
+    [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.6676037e1f90f5001f694055.cloud.techzone.ibm.com)<br>
+    [OpenShift Cluster URL](https://console-openshift-console.apps.6676037e1f90f5001f694055.cloud.techzone.ibm.com)<br>
+    [Event EndPoint Management URL](https://my-eem-manager-ibm-eem-manager-event-automation.apps.6676037e1f90f5001f694055.cloud.techzone.ibm.com)<br>
+    [Event Processing URL](https://my-ep-ibm-ep-rt-event-automation.apps.6676037e1f90f5001f694055.cloud.techzone.ibm.com)<br>
+
+1. **August Cluster 2 (3dd9) will be for Student11 to Student20** 
+
+    [Platform Navigator URL](https://cp4i-navigator-pn-cp4i.apps.668c8cf746125e001e703dd9.ocp.techzone.ibm.com)<br>
+    [OpenShift Cluster URL](https://console-openshift-console.apps.668c8cf746125e001e703dd9.ocp.techzone.ibm.com/)<br>
+    [Event EndPoint Management URL](https://my-eem-manager-ibm-eem-manager-event-automation.apps.668c8cf746125e001e703dd9.ocp.techzone.ibm.com)<br>
+    [Event Processing URL](https://my-ep-ibm-ep-rt-event-automation.apps.668c8cf746125e001e703dd9.ocp.techzone.ibm.com)<br>
 
 Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the 
 **[Review Lab environment.](Setup/VDI-overview/index.md)**
