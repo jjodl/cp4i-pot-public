@@ -171,6 +171,22 @@ You will use the Userid and Password provide for this lab.
 
 ![alt text][pic27]
 
+
+[pic6f]: images/6f.png
+[pic6g]: images/6g.png
+[pic6h]: images/6h.png
+[pic6i]: images/6i.png
+[pic6j]: images/6j.png
+[pic6k]: images/6k.png
+
+[pic7]: images/7.png
+[pic8]: images/8.png
+[pic9]: images/9.png
+[pic10]: images/10.png
+[pic11]: images/11.png
+[pic12]: images/12.png
+[pic13]: images/13.png
+
 [pic22]: images/22.png
 [pic22a]: images/22a.png
 [pic22b]: images/22b.png

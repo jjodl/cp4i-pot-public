@@ -169,13 +169,21 @@ The logging file will then be created:
 
 9\. Stop and start the **Test_Server**
 
-10\. Now return to the window that you opened in CP4I designer to download the json file.   Click on the Test your agent and you will see agents connected.   
+10\. Now return to the window that you opened in CP4I designer to download the json file. Close the \"Connect to Callable Flow\" window. <br>
+Refresh CallableFlows page. You shoud see the CallableFlow you deployed into the TEST_SERVER.<br>
+
+
+![alt text][pic19a]
+
+
+<!-- Click on the Test your agent and you will see agents connected.   
 
 You will see at least 1 agent. 
 
 **Note:** ***If you closed the window go back to step 2 and that will open the window again just disregard the download button.***
 
 ![alt text][pic21]
+ -->
 
 [pic14]: images/14.png
 [pic15]: images/15.png
@@ -192,13 +200,13 @@ In this section we use App Connect Designer to configure callable flows, to enab
 
 1\. Click on the **App Connect Designer** dashboard icon:
 
-![alt text][pic22]
+<!-- ![alt text][pic22] -->
 
 2\. Select from the New drop down to create a new API flow:  
 
 ![alt text][pic23]
 
-3\. First thing we will do is create the model for this.  We will call the model **CallableFlow**
+3\. First thing we will do is create the model for this.  We will call the model **CallableFlow**, and name of the flow **CallableFlow-Test**
 
 ![alt text][pic24]
 
@@ -215,6 +223,11 @@ In this section we use App Connect Designer to configure callable flows, to enab
 ![alt text][pic27]
 
 7\. ![alt text][pic28]
+
+Click the (+) sign between the Request and Response Nodes.<br><br>
+Search for \"Callable\".<br>
+![alt text][pic28a]
+
 
 8\. Here we will select the MyCallableFlows for the application.  This is the integration running on-prem.  The endpoint is the name of the CallableInput node in the flow. 
 
@@ -247,10 +260,12 @@ Click in the upper right cornor on the Stopped switch and it will turn green and
 [pic26]: images/26.png
 [pic27]: images/27.png
 [pic28]: images/28.png
+[pic28a]: images/28a.png
 [pic29]: images/29.png
 [pic30]: images/30.png
 [pic31]: images/31.png
 [pic32]: images/32.png
+[pic19a]: images/19a.png
 
 ## 2.4 Test from the Designer Test tab <a name="test_using_designer_test_tab"></a>
 
