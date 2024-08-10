@@ -255,11 +255,7 @@ If you have a Account already setup skip to **Step XX**
 7\. Now you will fill in the connection details from the MQ-Pre-Lab where you should have saved your **Queue Manager Name** and **Hostname**.
   
 * Enter the QMgr name
-* For the QMgr host we will use the following format:
-
-  qmgrxx-ibm-mq.\<userid>.svc
-
-  xx = userid number
+* For the QMgr host we will use the service name **student(n)-mq-ibm-mq.student(n).svc** where the **(n)** is the student number.
 * Port is 1414
 * Channel SYSTEM.DEF.SVRCONN
 

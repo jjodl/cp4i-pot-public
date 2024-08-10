@@ -419,7 +419,9 @@ Or if you already have a tab open from earlier in the lab you can select that.
 
 2\. You should now be on the App Connect Dashboard homepage.  
 
+<!--
 ![alt text][cf1c]
+-->
 
 [cf1a]: images/cf1a.png
 [cf1b]: images/cf1b.png
@@ -700,12 +702,11 @@ Find the kafka consumer pod and select that.
 Enter the following commands to view the file your flow creates.
 <code>
 
+```
 cd /tmp
-
 ls -ls kafka-example*
-
 cat kafka-example*
-</code>  
+```
 
 ![alt text][tst7]
 

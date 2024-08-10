@@ -41,7 +41,7 @@ Use the Java Client application and receive the flight landing events thru the I
     ```
     From that directory copy and paste the following command to create the JKS cert.
     ```
-    /usr/lib/jvm/java-11-openjdk-11.0.22.0.7-1.el7_9.x86_64/bin/keytool -importkeystore -srckeystore egw-cert.p12 \
+    ~/openjdk-22.0.2/jdk-22.0.2/bin/keytool -importkeystore -srckeystore egw-cert.p12 \
 	-srcstoretype PKCS12 \
         -destkeystore egw-cert.jks \
         -deststoretype JKS \
