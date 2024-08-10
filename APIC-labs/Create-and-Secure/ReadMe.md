@@ -43,7 +43,6 @@ In this tutorial, you will explore the following key capabilities:
 -   Publish an API for developers
 
 ![alt text](./images/apic-lab1-component-diagram.png)
-![alt text](image.png)
 
 
 # 2. Deploying the REST Services <a name="deploy"></a>

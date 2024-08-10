@@ -511,12 +511,19 @@ In this section, you will test the new version of the API to ensure that OAuth i
 
 ![alt text][pic81]
 
-17\. Confirm that your application is shown in the **API Key** and enter your application secret for the **API Secret**.
+17\. **SKIP THIS STEP. Get Token ISN'T WORKING, FIX IS SCHEDULED FOR THE NEXT RELEASE. FOR NOW, WE WILL TEST USING CURL instead.** <br>
+
+Confirm that your application is shown in the **API Key** and enter your application secret for the **API Secret**.
 
 ![alt text][pic88]
 
-18\. 
-In the **Username** field, enter **student(n)**.  In the **Password** field, enter **passw0rd**.  Select **customer** for the **Scopes**.
+18\. <br>
+** Copy the GET /customers URL and save to Scratchpad or Notepad. ** <br>
+** Copy the "token url" and save to Scratchpad or notepad.**
+
+
+**SKIP TO NEXT STEP.** <br>
+In the **Username** field, enter **studentx**.  In the **Password** field, enter **password**.  Select **customer** for the **Scopes**.
 
 Recall that when we configured the OAuth API, we provided an Authentication URL as the method for validating the user credentials.
 
@@ -524,30 +531,22 @@ Click **Get Token**.
 
 ![alt text][pic89]
 
-19\. 
+19\. **SKIP THIS STEP** <br>
 The API Portal will call out to the OAuth Token URL with your client credentials and user credentials.  The OAuth API will intercept the request, validate the credentials, and generate a token. 
 
 ![alt text][pic92] 
 
-20\. 
+20\. **SKIP THIS STEP** <br>
 Click **Send** to invoke the API. The request will include the OAuth bearer token in the Authorization header.
 
 ![alt text][pic93]
 
-21\. 
+21\. **SKIP THIS STEP** <br>
 Scroll down to see the call results.
 
 ![alt text][pic94]
 
-
-
-21a\. TESTING WITH CURL (Optional)
-
-** From the developer portal **
-** Copy the GET /customers URL and save to Scratchpad or Notepad. ** <br>
-** Copy the "token url" and save to Scratchpad or notepad.**
-
-Get Token using CURL command <br>
+21a\. Get Token using CURL command <br>
 <br>
 Open a Terminal or Command Line window.<br>
 

@@ -118,7 +118,6 @@ Next fill out the form and an activation email will be sent to you.  Click **Sig
 11\.<a name="step11"></a> You can log into the Developer Portal using the pre-defined Consumer account or the Consumer account that you just created.  Click on **Sign in** on the Dev Portal screen in the upper right corner.  
 
 ![alt text][pic19a]
-![alt text](image.png)
 
 12\. The Sign in screen will pop up and you will log in with your Consumer username and password. Login as **student(n)dev** and password **passw0rd**.
 

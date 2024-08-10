@@ -48,30 +48,14 @@ Click on the "Test APIs" tile. <br>
 
 ![Alt text](./images/image-2.png)
 
-Click **"Add test suite"**. <br>
+Click **"Create Test Suite"**. <br>
+
+![Alt text](./images/image-3.png)
 
 Test Suite name: student(n)-customerdatabase <br>
 Description: student(n) customer database test suite.<br>
 
-![Alt text](./images/image-3.png)
-
-Click Save.<br>
-
-![alt text](./images/image-3a.png)
-
-Click on the Test Suite tile that you just created.<br>
-
-![alt text](./images/image-4a.png)
-
-![alt text](./images/image-4b.png)
-![alt text](./images/image-4c.png)
-![alt text](./images/image-4d.png)
-![alt text](./images/image-4e.png)
-![alt text](./images/image-4f.png)
-![alt text](./images/image-4g.png)
-
-xxxx
-
+Click correct tick mark (on top right).<br>
 
 ![Alt text](./images/image-4.png)
 
