@@ -21,9 +21,6 @@
 In an event-driven flow you identify an event that can occur in your source application and actions that can be performed in one or more target applications. The flow is triggered when the event occurs.
 * The purpose of this LAB is to show how to create an event-driven flow to identify when new Salesforce Account Records are created. 
 
-![alt text](./images/component-diagram.png)
-
-
 # 2. Setup connection to Smart connectors for this lab.<a name="Setup_connections"></a>
 
 In this section we use App Connect Designer to create a flow that is triggered when an event occurs on Salesforce records.
@@ -52,7 +49,7 @@ First make sure you are logged into the CP4I Platform Navigator using the accoun
 
 12\. Now go back to the tab with the App Connect Designer and select the catalog on the left menu. Scroll down to IBM MQ and fill in the connection info.  
 * Enter your QMgr name
-* For the QMgr host we will use the service name **student(n)-mq-ibm-mq.student(n).svc** where the **(n)** is the student number.
+* For the QMgr host we will use the service name **qmgrX-ibm-mq** where the **X** equals the number from your cluster id ( ex: palpatine**2** )
 * Port is 1414
 * Channel SYSTEM.DEF.SVRCONN
 
@@ -92,10 +89,10 @@ Salesforce New Account Events.
 
 ![alt text][pic13]
 
-<!--
 8\. Now return to the tab where you have the MQ console opened.  Click on manged and you should see your new Queue.  It should be showing 0/5000 which means it has no messages and can handle 5000 messages. 
 * This is where we will check when we test this flow. 
-->
+
+![alt text][pic14aa]
 
 
 [pic0]: images/0.png
@@ -145,9 +142,8 @@ Salesforce New Account Events.
 **Note:** This is a shared login so others will be using this as well so try and use names that are unique to you or the Account you were assigned.   
 You will use the Userid and Password provide for this lab.
 
-<!--
 ![alt text][pic22b]
--->
+
 
 2\. In the left menu seach for Accounts and select that.   
 
@@ -170,22 +166,6 @@ You will use the Userid and Password provide for this lab.
 5\. You will now see that it shows 1/5000 which means we have a new message.  Click on the Queue to see the message.  Remeber in the mapping of the flow we put the Account Name in the Message body so you should see that here. 
 
 ![alt text][pic27]
-
-
-[pic6f]: images/6f.png
-[pic6g]: images/6g.png
-[pic6h]: images/6h.png
-[pic6i]: images/6i.png
-[pic6j]: images/6j.png
-[pic6k]: images/6k.png
-
-[pic7]: images/7.png
-[pic8]: images/8.png
-[pic9]: images/9.png
-[pic10]: images/10.png
-[pic11]: images/11.png
-[pic12]: images/12.png
-[pic13]: images/13.png
 
 [pic22]: images/22.png
 [pic22a]: images/22a.png
