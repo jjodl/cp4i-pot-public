@@ -4,7 +4,7 @@
 
 [Return to main lab page](../index.md)
 
----
+---v
 
 # Table of Contents 
 - [1. Introduction](#introduction)
@@ -142,8 +142,10 @@ Salesforce New Account Events.
 **Note:** This is a shared login so others will be using this as well so try and use names that are unique to you or the Account you were assigned.   
 You will use the Userid and Password provide for this lab.
 
-![alt text][pic22b]
-
+  ```
+    username: potSF@gmail.com
+    password: SF-Aug-2024
+  ```
 
 2\. In the left menu seach for Accounts and select that.   
 
